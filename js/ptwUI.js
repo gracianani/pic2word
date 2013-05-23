@@ -26,15 +26,7 @@ PtwUI.prototype.init = function() {
 	this.currentLevel = 0;
 	this.answer = '';
 	
-	$('.question-answer').each(function(){
-   		var width = 0;
-   		$(this).find('li').each(function(){
-   			width += parseInt($(this).outerWidth());
-   		});
-   		$(this).css('width',(width+30) + 'px');
-   		$(this).css('margin-left', '-' + (width/2) + 'px');
-
-   }); 
+	
    
 
 }
@@ -59,18 +51,24 @@ PtwUI.prototype.showNextQuestion = function (previousQuestionId, nextQuestionId)
 }
 PtwUI.prototype.showCurrentQuestion = function () {
     $('.question').css('display', 'none');
-    $('#question-' + controller.currentQuestionId).css('display', 'block');
+    $('#question-' + controller.currentQuestionId).css('display', 'block').find('.question-answer').each(function(){
+   		var width = 0;
+   		$(this).find('li').each(function(){
+   			width += parseInt($(this).outerWidth());
+   		});
+   		$(this).css('width',(width+30) + 'px');
+   		$(this).css('margin-left', '-' + (width/2) + 'px');
+
+   }); 
 }
 PtwUI.prototype.showLoadingUI= function(){
-    $("#page-preload").siblings().css("display", "none");
-    $("#page-preload").css("display", "block");
+    $('.current-page').removeClass('current-page').addClass('animated bounceOutLeft');
+    $('#page-preload').addClass('current-page').addClass('animated bounceInRight').show();
     $(".ui-progress").css("width", "0%").css("display", "block").find(".ui-label").css("display", "block");
 
 }
 PtwUI.prototype.showLoadingUIProgress = function (event) {
-    $('.current-page').removeClass('current-page').addClass('animated bounceOutLeft');
-    $('#page-preload').addClass('current-page').addClass('animated bounceInRight').show();
-    $(".ui-progress").css("width", "0%").css("display", "block").find(".ui-label").css("display", "block");
+    
 
     $(".ui-progress").css("width", event.loaded * 100 + "%").find(".value").html(parseInt(event.loaded * 100) + "%");
 }

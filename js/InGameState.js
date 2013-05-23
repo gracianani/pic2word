@@ -1,6 +1,7 @@
 
 function OnEnterInGameState() {
     ptwUI.showInGameUI();
+    ptwUI.showCurrentQuestion();
 	//register key functions
     $('.btnNextQuestion').click(function (e) {
         var answerText = $(this).parent().find("#answer-" + controller.currentQuestionId).val();

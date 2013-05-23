@@ -34,7 +34,6 @@ function handleFileLoad(event) {
 function handleComplete() 
 {
     setTimeout(function () {
-        ptwUI.showCurrentQuestion();
         SM.SetStateByName("inGame");
     }, 1000);
 }

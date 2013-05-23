@@ -1,8 +1,9 @@
 var preload;
 function OnEnterPreloadState() {
 
-    $("#page-preload").siblings().css("display", "none");
-    $("#page-preload").css("display", "block");
+    $('.current-page').removeClass('current-page').addClass('animated bounceOutLeft');
+   	$('#page-preload').addClass('current-page').addClass('animated bounceInRight').show();
+
     $(".ui-progress").css("width", "0%").css("display", "block").find(".ui-label").css("display", "block");
 
 	controller.loadQuestions();
@@ -29,7 +30,7 @@ function preloadImages(questions) {
 
 function handleProgress(event) {
 
-    $(".ui-progress").css("width", event.loaded * 100 + "%").find(".value").html(event.loaded * 100 + "%");
+    $(".ui-progress").css("width", event.loaded * 100 + "%").find(".value").html(parseInt(event.loaded * 100) + "%");
 }
 
 function handleFileLoad(event) {

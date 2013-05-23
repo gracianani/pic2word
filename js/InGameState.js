@@ -1,8 +1,8 @@
 
 function OnEnterInGameState() {
 
-    $("#page-play").siblings().css("display", "none");
-    $("#page-play").css("display", "block");
+    $('.current-page').removeClass('current-page').addClass('animated bounceOutLeft');
+   	$('#page-play').addClass('current-page').addClass('animated bounceInRight').show();
 	//register key functions
     $('.btnNextQuestion').click(function (e) {
         var answerText = $(this).parent().find("#answer-" + controller.currentQuestionId).val();

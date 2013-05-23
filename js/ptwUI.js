@@ -36,10 +36,7 @@ PtwUI.prototype.init = function() {
 
    }); 
    
-   $('#start-btnPlay').click(function(){
-   	$('#page-start').removeClass('current-page').addClass('animated bounceOutLeft').hide();
-   	$('#page-play').addClass('current-page').addClass('animated bounceInRight').show();
-   });
+
 }
 
 PtwUI.prototype.showMenuUI= function(){

@@ -67,49 +67,7 @@
 	        <div class="main-container">
 	            <div class="main wrapper clearfix">
 	            	<div id="questions">
-	            		<div class="question">
-	            			<article>
-		                    <div class="question-pic">
-		                    	<img src="img/sample.png" alt="question" />
-		                    	<div class="question-type">电视&电影</div>
-		                    </div>
-		                    <ul class="question-answer clearfix">
-		                    	<li data-key="" class="answer-key">哈</li>
-		                    	<li data-key="" class="answer-key"></li>
-		                    	<li data-key="" class="answer-key"></li>
-		                    	<li data-key="" class="answer-key"></li>
-		                    </ul>
-		                    <hr />
-	            			</article>
-	            			<aside>
-		                    <ul class="question-keyboard clearfix">
-		                    	<li data-key="A" class="question-key">家</li>
-		                    	<li data-key="B" class="question-key">人</li>
-		                    	<li data-key="A" class="question-key">和</li>
-		                    	<li data-key="B" class="question-key">好</li>
-		                    	<li data-key="A" class="question-key">哈</li>
-		                    	<li data-key="B" class="question-key">离</li>
-		                    	<li data-key="A" class="question-key">陪</li>
-		                    	<li data-key="B" class="question-key">B</li>
-		                    	<li data-key="A" class="question-key">A</li>
-		                    	<li data-key="B" class="question-key">B</li>
-		                    	<li data-key="A" class="question-key">A</li>
-		                    	<li data-key="B" class="question-key">B</li>
-		                    	<li data-key="A" class="question-key">A</li>
-		                    	<li data-key="B" class="question-key">B</li>
-		                    	<li data-key="A" class="question-key">A</li>
-		                    	<li data-key="B" class="question-key">B</li>
-		                    	<li data-key="A" class="question-key">A</li>
-		                    	<li data-key="B" class="question-key">B</li>
-		                    	<li data-key="A" class="question-key">A</li>
-		                    	<li data-key="B" class="question-key">B</li>
-		                    	<li data-key="A" class="question-key">A</li>
-		                    	<li data-key="B" class="question-key">B</li>
-		                    	<li data-key="A" class="question-key">A</li>
-		                    	<li data-key="B" class="question-key">B</li>
-		                    </ul>
-	            			</aside>
-	                    </div>
+	            		
 	                    <div class="question">
 	                    
 	                    </div>
@@ -155,6 +113,53 @@
                 SM.RegisterState("inGame", InGameState);
                 SM.SetStateByName("menu");
             }
+        </script>
+        <script type="text/x-jQuery-tmpl" id="questionTmpl">
+        <div class='question' id='question-{{ID}}'>
+	        <article>
+		    <div class='question-pic'>
+		        <img src='{{imageUrl}}' alt='question' />
+		        <div class='question-type'>{{category}} </div>
+		    </div>
+		    <ul class='question-answer clearfix'>
+		        <li data-key='' class='answer-key'>哈</li>
+		        <li data-key='' class='answer-key'></li>
+		        <li data-key='' class='answer-key'></li>
+		        <li data-key='' class='answer-key'></li>
+		    </ul>
+		    <hr />
+	        </article>
+	        <aside>
+		    <ul class='question-keyboard clearfix'>
+		        <li data-key='A' class='question-key'>家</li>
+		        <li data-key='B' class='question-key'>人</li>
+		        <li data-key='A' class='question-key'>和</li>
+		        <li data-key='B' class='question-key'>好</li>
+		        <li data-key='A' class='question-key'>哈</li>
+		        <li data-key='B' class='question-key'>离</li>
+		        <li data-key='A' class='question-key'>陪</li>
+		        <li data-key='B' class='question-key'>B</li>
+		        <li data-key='A' class='question-key'>A</li>
+		        <li data-key='B' class='question-key'>B</li>
+		        <li data-key='A' class='question-key'>A</li>
+		        <li data-key='B' class='question-key'>B</li>
+		        <li data-key='A' class='question-key'>A</li>
+		        <li data-key='B' class='question-key'>B</li>
+		        <li data-key='A' class='question-key'>A</li>
+		        <li data-key='B' class='question-key'>B</li>
+		        <li data-key='A' class='question-key'>A</li>
+		        <li data-key='B' class='question-key'>B</li>
+		        <li data-key='A' class='question-key'>A</li>
+		        <li data-key='B' class='question-key'>B</li>
+		        <li data-key='A' class='question-key'>A</li>
+		        <li data-key='B' class='question-key'>B</li>
+		        <li data-key='A' class='question-key'>A</li>
+		        <li data-key='B' class='question-key'>B</li>
+		    </ul>
+	        </aside>
+            <input id='answer-{{ID}}' type='text'/>
+            <input class='btnNextQuestion' type='button' value='下一题'></input>
+	    </div>
         </script>
     </body>
 </html>

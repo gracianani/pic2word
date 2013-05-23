@@ -35,7 +35,7 @@ function handleProgress(event) {
 function handleFileLoad(event) {
     var question = new Question(controller.questionRepo[event.item.id], event.result.src);
     question.update();
-    $("#inGame").append(question.questionUI);
+    $("#questions").append(question.questionUI);
 }
 
 function handleComplete() 

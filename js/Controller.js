@@ -42,7 +42,7 @@ Controller.prototype.saveInCookie = function () {
 
 Controller.prototype.loadQuestions = function () {
     var that = this;
-    $.getJSON(sprintf("../data/level%d.json", this.currentQuestionBatch), function (data) {
+    $.getJSON(sprintf("data/level%d.json", this.currentQuestionBatch), function (data) {
         that.questionRepo = data["questions"];
         if (that.forceFromCurrent == false) {
             that.currentQuestionIndex = 0;

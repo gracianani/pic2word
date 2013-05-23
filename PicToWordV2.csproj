@@ -65,7 +65,9 @@
     <Content Include="css\main.css" />
     <Content Include="css\normalize.css" />
     <Content Include="css\ui.progress-bar.css" />
-    <None Include="data\level2.json" />
+    <Content Include="data\level2.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="humans.txt" />
     <Content Include="img\.gitignore" />
@@ -156,9 +158,10 @@
     <None Include=".htaccess" />
     <None Include="CHANGELOG.md" />
     <None Include="CONTRIBUTING.md" />
-    <None Include="data\level1.json">
+    <Content Include="data\level1.json">
       <SubType>Designer</SubType>
-    </None>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="doc\crossdomain.md" />
     <None Include="doc\css.md" />
     <None Include="doc\extend.md" />
@@ -169,6 +172,7 @@
     <None Include="doc\TOC.md" />
     <None Include="doc\usage.md" />
     <None Include="LICENSE.md" />
+    <None Include="Properties\PublishProfiles\apache.pubxml" />
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup />

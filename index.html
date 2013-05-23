@@ -133,38 +133,20 @@
 		        <div class='question-type'>{{category}} </div>
 		    </div>
 		    <ul class='question-answer clearfix'>
-                {{#answer}}
+                {{#answerArray}}
                     <li data-key='' class='answer-key'></li>
-                {{/answer}}
+                {{/answerArray}}
 		    </ul>
 		    <hr />
 	        </article>
 	        <aside>
 		    <ul class='question-keyboard clearfix'>
-		        <li data-key='A' class='question-key'>家</li>
-		        <li data-key='B' class='question-key'>人</li>
-		        <li data-key='A' class='question-key'>和</li>
-		        <li data-key='B' class='question-key'>好</li>
-		        <li data-key='A' class='question-key'>哈</li>
-		        <li data-key='B' class='question-key'>离</li>
-		        <li data-key='A' class='question-key'>陪</li>
-		        <li data-key='B' class='question-key'>B</li>
-		        <li data-key='A' class='question-key'>A</li>
-		        <li data-key='B' class='question-key'>B</li>
-		        <li data-key='A' class='question-key'>A</li>
-		        <li data-key='B' class='question-key'>B</li>
-		        <li data-key='A' class='question-key'>A</li>
-		        <li data-key='B' class='question-key'>B</li>
-		        <li data-key='A' class='question-key'>A</li>
-		        <li data-key='B' class='question-key'>B</li>
-		        <li data-key='A' class='question-key'>A</li>
-		        <li data-key='B' class='question-key'>B</li>
-		        <li data-key='A' class='question-key'>A</li>
-		        <li data-key='B' class='question-key'>B</li>
-		        <li data-key='A' class='question-key'>A</li>
-		        <li data-key='B' class='question-key'>B</li>
-		        <li data-key='A' class='question-key'>A</li>
-		        <li data-key='B' class='question-key'>B</li>
+                {{#keyboardArray}}
+                    <li data-key='{{.}}' class='question-key'>{{.}}</li>
+                {{/keyboardArray}}
+                {{#answerArray}}
+                    <li data-key='{{.}}' class='question-key'>{{.}}</li>
+                {{/answerArray}}
 		    </ul>
 	        </aside>
             <input id='answer-{{ID}}' type='text'/>

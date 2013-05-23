@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E54999EC-7632-41B0-914D-F0F5477E2CFD}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PicToWordV2</RootNamespace>
+    <AssemblyName>PicToWordV2</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitattributes" />
+    <Content Include=".gitignore" />
+    <Content Include="404.html" />
+    <Content Include="apple-touch-icon-114x114-precomposed.png" />
+    <Content Include="apple-touch-icon-144x144-precomposed.png" />
+    <Content Include="apple-touch-icon-57x57-precomposed.png" />
+    <Content Include="apple-touch-icon-72x72-precomposed.png" />
+    <Content Include="apple-touch-icon-precomposed.png" />
+    <Content Include="apple-touch-icon.png" />
+    <Content Include="crossdomain.xml" />
+    <Content Include="css\animate.min.css" />
+    <Content Include="css\main.css" />
+    <Content Include="css\normalize.css" />
+    <Content Include="css\ui.progress-bar.css" />
+    <None Include="data\level2.json" />
+    <Content Include="favicon.ico" />
+    <Content Include="humans.txt" />
+    <Content Include="img\.gitignore" />
+    <Content Include="img\bannerAds.png" />
+    <Content Include="img\bodybg.png" />
+    <Content Include="img\catalogue.png" />
+    <Content Include="img\icon-512.png" />
+    <Content Include="img\level.png" />
+    <Content Include="img\sample.png" />
+    <Content Include="img\topbg.jpg" />
+    <Content Include="img\__00001.png" />
+    <Content Include="img\__00002.png" />
+    <Content Include="img\__00003.png" />
+    <Content Include="img\__00004.png" />
+    <Content Include="img\__00005.png" />
+    <Content Include="img\__00006.png" />
+    <Content Include="img\__00007.png" />
+    <Content Include="img\__00008.png" />
+    <Content Include="img\__00009.png" />
+    <Content Include="img\__00010.png" />
+    <Content Include="img\__00011.png" />
+    <Content Include="img\__00012.png" />
+    <Content Include="img\__00013.png" />
+    <Content Include="img\__00014.png" />
+    <Content Include="img\__00015.png" />
+    <Content Include="img\__00016.png" />
+    <Content Include="img\__00017.png" />
+    <Content Include="img\__00018.png" />
+    <Content Include="img\__00019.png" />
+    <Content Include="img\__00020.png" />
+    <Content Include="img\__00021.png" />
+    <Content Include="img\__00022.png" />
+    <Content Include="img\__00023.png" />
+    <Content Include="img\__00024.png" />
+    <Content Include="img\__00025.png" />
+    <Content Include="img\__00026.png" />
+    <Content Include="img\__00027.png" />
+    <Content Include="img\__00028.png" />
+    <Content Include="img\__00029.png" />
+    <Content Include="img\__00030.png" />
+    <Content Include="img\__00031.png" />
+    <Content Include="img\__00032.png" />
+    <Content Include="img\__00033.png" />
+    <Content Include="img\__00034.png" />
+    <Content Include="img\__00035.png" />
+    <Content Include="img\__00036.png" />
+    <Content Include="img\__00037.png" />
+    <Content Include="img\__00038.png" />
+    <Content Include="img\__00039.png" />
+    <Content Include="img\__00040.png" />
+    <Content Include="img\__00041.png" />
+    <Content Include="img\__00042.png" />
+    <Content Include="img\__00043.png" />
+    <Content Include="img\__00044.png" />
+    <Content Include="img\__00045.png" />
+    <Content Include="img\__00046.png" />
+    <Content Include="img\__00047.png" />
+    <Content Include="img\__00048.png" />
+    <Content Include="img\__00049.png" />
+    <Content Include="img\__00050.png" />
+    <Content Include="index.html" />
+    <Content Include="js\Controller.js" />
+    <Content Include="js\InGameState.js" />
+    <Content Include="js\libs\webtoolkit.sprintf.js" />
+    <Content Include="js\ptwUI.js" />
+    <Content Include="js\MenuState.js" />
+    <Content Include="js\plugins.js" />
+    <Content Include="js\PreloadState.js" />
+    <Content Include="js\Question.js" />
+    <Content Include="js\State.js" />
+    <Content Include="js\Util.js" />
+    <Content Include="js\vendor\jquery-1.9.1.min.js" />
+    <Content Include="js\vendor\modernizr-2.6.2.min.js" />
+    <Content Include="js\vendor\mustache.js" />
+    <Content Include="robots.txt" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".htaccess" />
+    <None Include="CHANGELOG.md" />
+    <None Include="CONTRIBUTING.md" />
+    <None Include="data\level1.json">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="doc\crossdomain.md" />
+    <None Include="doc\css.md" />
+    <None Include="doc\extend.md" />
+    <None Include="doc\faq.md" />
+    <None Include="doc\html.md" />
+    <None Include="doc\js.md" />
+    <None Include="doc\misc.md" />
+    <None Include="doc\TOC.md" />
+    <None Include="doc\usage.md" />
+    <None Include="LICENSE.md" />
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64370</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

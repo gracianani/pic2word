@@ -1,0 +1,657 @@
+/* ==========================================================================
+   HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+body {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+img {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+/* ===== Initializr Styles ==================================================
+   Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
+   ========================================================================== */
+
+body {
+    font: 16px/26px "Lucida Sans",Helvetica, Helvetica Neue, Arial,sans-serif;
+}
+
+.wrapper {
+    width: 90%;
+    margin: 0 5%;
+}
+
+/* ===================
+    ALL: Orange Theme
+   =================== */
+
+.header-container {
+}
+
+.footer-container,
+.main aside {
+}
+
+.header-container
+ {
+    background: #1a6279 url(../img/topbg.jpg) repeat-x left bottom;
+}
+.main aside {
+	
+}
+
+.title {
+    color: white;
+}
+
+/* ==============
+    MOBILE: Menu
+   ============== */
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    display: block;
+    margin-bottom: 10px;
+    padding: 15px 0;
+
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+
+    color: white;
+    background: #e44d26;
+}
+
+nav a:hover,
+nav a:visited {
+    color: white;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* ==============
+    MOBILE: Main
+   ============== */
+
+.main {
+    padding: 3em 0 0;
+}
+
+.main article h1 {
+    font-size: 2em;
+}
+
+.main aside {
+    color: white;
+}
+
+.footer-container footer {
+    color: white;
+    padding: 20px 0;
+}
+
+/* ===============
+    ALL: IE Fixes
+   =============== */
+
+.ie7 .title {
+    padding-top: 20px;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+.none {
+	display: none;
+}
+body {
+	background:#2d2d2d url(../img/bodybg.png);
+	color: #FFF;
+	-moz-user-select: none;
+   -webkit-user-select: none;
+      -ms-user-select: none;   /*IE10*/
+   -khtml-user-select: none; 
+   user-select: none;
+
+}
+h1,h2,h3,h4 {
+	font-weight: normal;
+}
+.header-container h1 {
+	font-size: 18px;
+	margin: 0;
+	line-height: 35px;
+	text-align: center;
+	width: 100%;
+	text-shadow: 1px 1px 0 #000;
+}
+.header-container {
+	text-align: center;
+	height: 45px;
+	background-size:auto 100%;
+}
+#start-icon {
+	background: url(../img/icon-512.png) left top no-repeat;
+	width: 180px;
+	height: 180px;
+	background-size:100% 100%;
+	margin: 0 auto;
+	position:relative;
+	font-size: 1em;
+	margin-bottom: 1em;
+}
+#start-level {
+	position: absolute;
+	left: -10px;
+	bottom: -5px;
+	font-size: 1.5em;
+	text-shadow: 1px 1px 0px #8a0022;
+	background: url(../img/level.png) center center no-repeat;
+	background-size: 100% 100%;
+	width: 70px;
+	height: 70px;
+	overflow: hidden;
+	line-height: 70px;
+}
+#page-start{
+	text-align: center;
+}
+.btn {
+	border-radius: 15px;
+	background-color: #1a6279;
+	color: #FFF;
+	padding: 10px;
+	cursor: pointer;
+	display: inline-block;
+}
+.btn-big {
+	text-transform: uppercase;
+	font-size: 2.5em;
+	padding: 10px 30px;
+}
+.btn-success {
+	background-color: #6ba94e;
+}
+#start-btnPlay{
+	padding:15px 30px;
+	border-bottom:5px solid #256f00;
+	border-radius: 20px;
+	text-shadow: 1px 1px 2px #256f00;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+#start-btnPlay:hover,#start-btnPlay:focus {
+	background-color: #e9b42a;
+	border-bottom-color: #dc8b0c;
+	text-shadow: 1px 1px 2px #8a0022;
+}
+#start-btnPlay:active {
+	background-color: #dc8b0c;
+	border-bottom: none;
+	position: relative;
+	top:5px;
+	text-shadow: none;
+	color: #8a0022;
+
+}
+#page-play .header-container {
+	position: relative;
+}
+.btn-back {
+	line-height: 2em;
+	padding: 0;
+	border-radius: 0;
+	text-align: left;
+	position: relative;
+	display: inline-block;
+	background-color: #4895b0;
+	padding: 0 20px;
+	border-radius: 0 5px 5px 0;
+	font-size: 1.5em;
+}
+.btn-back:before {
+    position:absolute;
+    content: " ";
+    border: transparent 1em solid;
+    border-right-color: #4895b0;
+    top: 0;
+    left: -2em;
+    height: 0;
+    width: 0;
+}
+#play-level {
+	background: url(../img/level.png) center center no-repeat;
+	background-size: 100% 100%;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 1em;
+	position: absolute;
+	margin-left: -25px;
+	left: 50%;
+	top: 0;
+	
+}
+.question-pic {
+	width: 160px;
+	height: 160px;
+	position: relative;
+	margin: 0 auto;
+	border:5px solid #efefef;
+}
+.question-pic img {
+	width: 100%;
+	height: 100%;
+}
+.question-type {
+	width: 180px;
+	height: 32px;
+	background: url(../img/catalogue.png) center center no-repeat;
+	background-size:100% 100%;
+	text-align: center;
+	position: absolute;
+	top:-33px;
+	left: 50%;
+	margin-left: -90px;
+}
+li,ul {
+	list-style: none;
+	margin:0;
+	padding: 0;
+}
+.question-answer {
+	text-align: center;
+	position: relative;
+	margin-top: 0.5em;
+	left: 50%;
+}
+.answer-key {
+	background: #111;
+	font-size: 1.5em;
+	width: 1.5em;
+	height: 1.5em;
+	line-height: 1.5em;
+	float: left;
+	display: inline-block;
+	margin-right: 3px;
+	border-radius: 5px;
+	cursor: pointer;
+	border-left: 1px solid #333;
+	border-bottom: 1px solid #333;
+}
+.answer-key:last {
+	margin-right: 0;
+}
+.answer-key:hover,.answer-key:active {
+	background: #000;
+	color: #dc8b0c;
+}
+hr {
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #333;
+	margin: 0.5em 0;
+}
+.question-key {
+	font-size: 1em;
+	float: left;
+
+	width: 11.5%;
+	height: 2em;
+	line-height: 2em;
+	
+	background: #efefef;
+	border-radius: 5px;
+	border-bottom: 2px solid #aaa;
+	text-align: center;
+	color: #111;
+	display: inline-block;
+	margin-right: 1%;
+	
+	margin-bottom: 5px;
+	cursor: pointer;
+	
+}
+.question-key:hover {
+	background-color: #4895b0;
+	color: #FFF;
+	border-bottom-color: #064257;
+	
+}
+.question-key:active {
+	background-color: #dc8b0c;
+	border-bottom: 0;
+	border-top:2px solid #333;
+	text-shadow: -1px -1px 0 #333;
+}
+body {
+	position: relative;
+}
+.page {
+	position: absolute;
+	width: 100%;
+	z-index: 1;
+}
+.current-page {
+	z-index: 100;
+	left: 0;
+	top: 0;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 480px) {
+
+   .question-key {
+	   width: 8.5%;
+	   margin-right: 0.25%;
+	   margin-left: 0.25%;
+	   height: 2.5em;
+	   line-height: 2.5em;
+	   margin-bottom: 4px;
+   }
+   
+   
+
+}
+/* smartphone landscape */
+@media only screen and (min-device-width: 320px) 
+and (max-device-width: 640px)
+and (orientation : landscape) {
+	.wrapper {
+		margin:0;
+		width: 100%;
+	}
+	.main {
+		padding: 10px 0 0;
+	}
+    .main article {
+        float: left;
+        width: 40%;
+    }
+    .header-container {
+		height: 32px;
+		line-height: 32px;
+		
+	}
+	#start-icon {
+		margin-top: 10px;
+		float: right;
+	}
+	#start-btnPlay {
+		margin-top: 60px;
+	}
+	#play-level {
+		margin-left: 0;
+		left: 5px;
+		z-index: 99;
+	}
+
+	.question-pic {
+		width: 150px;
+		height: 150px;
+		border-width: 5px;
+		margin-top: 25px;
+	}
+	.main article{
+		position: relative;
+	}
+	.question-answer {
+		position: absolute;
+		left:165%;
+		top:0;		
+	}
+	.answer-key {
+		font-size: 1.5em;
+		width: 1.5em;
+		height: 1.5em;
+		line-height: 1.5em;
+		float: left;
+		margin-right: 3px;
+		border-radius: 5px;
+	}
+	.question-type {
+		width: 150px;
+		height: 25px;
+		line-height: 20px;
+		font-size: 0.6em;
+		margin-left: -75px;
+		top:-23px;
+	}
+    .main aside {
+        float: right;
+        width: 58%;
+    }
+    .question-keyboard {
+	    margin-top: 70px;
+    }
+    .question-key {
+    	font-size: 1.4em;
+		width: 1.5em;
+		height: 1.5em;
+		line-height: 1.5em;
+		margin-right: 5px;
+		
+	}
+	hr {
+		display:none;
+	}
+	
+}
+@media only screen and (min-width: 768px) {
+	.question-key {
+		font-size: 1.5em;
+		width: 2em;
+		height: 2em;
+		line-height: 2em;
+		border-radius: 10px;
+		border-bottom: 3px solid #aaa;
+		margin-right: 5px;
+		margin-left: 0;
+		margin-bottom: 5px;
+	}
+	.question-key:active {
+		border-top-width: 3px;
+	}
+	#start-icon {
+		width: 320px;
+		height: 320px;
+		margin-bottom: 3em;
+	}
+	#start-level {
+		width: 120px;
+		height: 120px;
+		line-height: 120px;
+		font-size: 2.5em;
+	}
+	#start-btnPlay {
+		padding: 30px 90px;
+		font-size: 3em;
+		border-bottom-width: 10px;
+	}
+	.question-pic {
+	   width: 256px;
+	   height: 256px;
+   }
+   .header-container {
+	   height: 64px;
+   }
+   .header-container h1 {
+	   line-height: 64px;
+	   font-size: 1.5em;
+   }
+   #play-level {
+	   width: 70px;
+	   height: 70px;
+	   line-height: 70px;
+	   margin-left: -35px;
+	   font-size: 1.5em;
+   }
+   
+
+}
+
+@media only screen and (min-width: 1024px) {
+
+/* ====================
+    WIDE: CSS3 Effects
+   ==================== */
+
+    hr {
+	    display: none;
+    }
+    
+
+/* ============
+    WIDE: Main
+   ============ */
+
+    .main article {
+        float: left;
+        width: 57%;
+    }
+
+    .main aside {
+        float: right;
+        width: 38%;
+    }
+    .question-keyboard {
+	    position: relative;
+	    top: 40px;
+    }
+    .question-key {
+		font-size: 1.5em;
+		width: 2em;
+		height: 2em;
+		line-height: 2em;
+		border-radius: 10px;
+		border-bottom: 3px solid #aaa;
+		margin-right: 5px;
+		margin-left: 0;
+		margin-bottom: 5px;
+	}
+	#start-btnPlay {
+		margin-top: 80px;
+	}
+}
+
+@media only screen and (min-width: 1140px) {
+
+/* ===============
+    Maximal Width
+   =============== */
+
+    .wrapper {
+        width: 1026px; /* 1140px - 10% for margins */
+        margin: 0 auto;
+    }
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+

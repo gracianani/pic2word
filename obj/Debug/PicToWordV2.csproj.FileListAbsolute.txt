@@ -1,0 +1,5 @@
+c:\Users\yaqiZhao\Documents\Visual Studio 2010\Projects\PicToWordV2\PicToWordV2\bin\PicToWordV2.dll
+c:\Users\yaqiZhao\Documents\Visual Studio 2010\Projects\PicToWordV2\PicToWordV2\bin\PicToWordV2.pdb
+c:\Users\yaqiZhao\Documents\Visual Studio 2010\Projects\PicToWordV2\PicToWordV2\obj\Debug\ResolveAssemblyReference.cache
+c:\Users\yaqiZhao\Documents\Visual Studio 2010\Projects\PicToWordV2\PicToWordV2\obj\Debug\PicToWordV2.dll
+c:\Users\yaqiZhao\Documents\Visual Studio 2010\Projects\PicToWordV2\PicToWordV2\obj\Debug\PicToWordV2.pdb

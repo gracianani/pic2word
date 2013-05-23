@@ -1,0 +1,70 @@
+﻿{
+  "questions" : [
+    {
+        "answer": "亚马逊",
+        "category": "公司&品牌",
+        "ID": 12,
+        "keyboard": "卓越超讯自达麻谷歌苹果脸谱书"
+    },
+    {
+        "answer": "侏罗纪公园",
+        "category": "电影&电视",
+        "ID": 13,
+        "keyboard": "儒汉人恐龙总动员世时代主王国"
+    },
+    {
+        "answer": "乔布斯",
+        "category": "明星&名人",
+        "ID": 14,
+        "keyboard": "老爷不死治鲁门拉齐奥"
+    },
+    {
+        "answer": "星球大战",
+        "category": "电影&电视",
+        "ID": 15,
+        "keyboard": "堡垒争霸际迷航斗太空"
+    },
+    {
+        "answer": "小布什",
+        "category": "明星&名人",
+        "ID": 16,
+        "keyboard": "大老中尔哥戈叶利钦猴屁股"
+    },
+    {
+        "answer": "大白鲨",
+        "category": "电影&电视",
+        "ID": 17,
+        "keyboard": "鱼海底恶魔鲸惊魂毒蛇怪兽巨嘴危险"
+    },
+    {
+        "answer": "马三立",
+        "category": "明星&名人",
+        "ID": 18,
+        "keyboard": "刘宝瑞季张峰"
+    },
+    {
+        "answer": "马达加斯加",
+        "category": "电影&电视",
+        "ID": 19,
+        "keyboard": "戏团冒险斑长颈鹿河森林之王城市"
+    },
+    {
+        "answer": "金正恩",
+        "category": "明星&名人",
+        "ID": 20,
+        "keyboard": "三顺日成李明博胡志车太贤鸟叔"
+    },
+    {
+        "answer": "冰河世纪",
+        "category": "电影&电视",
+        "ID": 21,
+        "keyboard": "狮王子迪斯尼梦工厂克客齐奥林"
+    },
+    {
+        "answer": "贝克汉姆",
+        "category": "明星&名人",
+        "ID": 22,
+        "keyboard": "木慕罗纳尔多詹斯奥尼巴神"
+    }
+]
+}

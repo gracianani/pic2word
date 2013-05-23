@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include=".gitattributes">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include=".gitignore">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="404.html">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="apple-touch-icon-114x114-precomposed.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="apple-touch-icon-144x144-precomposed.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="apple-touch-icon-57x57-precomposed.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="apple-touch-icon-72x72-precomposed.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="apple-touch-icon-precomposed.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="apple-touch-icon.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="bin/data/level1.json">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="bin/data/level2.json">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="bin/PicToWordV2.dll">
+      <publishTime>05/23/2013 16:41:22</publishTime>
+    </File>
+    <File Include="crossdomain.xml">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="css/animate.min.css">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="css/main.css">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="css/normalize.css">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="css/ui.progress-bar.css">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="data/level1.json">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="data/level2.json">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="humans.txt">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/.gitignore">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/bannerAds.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/bodybg.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/catalogue.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/icon-512.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/level.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/sample.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/topbg.jpg">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00001.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00002.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00003.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00004.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00005.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00006.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00007.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00008.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00009.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00010.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00011.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00012.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00013.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00014.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00015.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00016.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00017.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00018.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00019.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00020.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00021.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00022.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00023.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00024.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00025.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00026.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00027.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00028.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00029.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00030.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00031.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00032.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00033.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00034.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00035.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00036.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00037.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00038.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00039.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00040.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00041.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00042.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00043.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00044.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00045.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00046.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00047.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00048.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00049.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="img/__00050.png">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="index.html">
+      <publishTime>05/23/2013 16:44:34</publishTime>
+    </File>
+    <File Include="js/Controller.js">
+      <publishTime>05/23/2013 16:44:54</publishTime>
+    </File>
+    <File Include="js/InGameState.js">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="js/libs/webtoolkit.sprintf.js">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="js/MenuState.js">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="js/plugins.js">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="js/PreloadState.js">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="js/ptwUI.js">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="js/Question.js">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="js/State.js">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="js/Util.js">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="js/vendor/jquery-1.9.1.min.js">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="js/vendor/modernizr-2.6.2.min.js">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="js/vendor/mustache.js">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="robots.txt">
+      <publishTime>05/23/2013 16:30:09</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>05/23/2013 16:37:08</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

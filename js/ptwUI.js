@@ -26,7 +26,6 @@ PtwUI.prototype.init = function() {
 	this.currentLevel = 0;
 	this.answer = '';
 	
-	
 	$('.question-answer').each(function(){
    		var width = 0;
    		$(this).find('li').each(function(){

@@ -1,8 +1,6 @@
 
 function OnEnterInGameState() {
-
-    $("#page-play").siblings().css("display", "none");
-    $("#page-play").css("display", "block");
+    ptwUI.showInGameUI();
 	//register key functions
     $('.btnNextQuestion').click(function (e) {
         var answerText = $(this).parent().find("#answer-" + controller.currentQuestionId).val();

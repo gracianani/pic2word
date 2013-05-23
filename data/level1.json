@@ -1,16 +1,16 @@
 ﻿{
 "questions": [
 {
-"answer": "可口可乐",
+"answer": ["可&quot;,&quot;口&quot;,&quot;可&quot;,&quot;乐"],
 "ID": 1,
 "category": "公司&品牌",
-"keyboard": "汽水爱中国"
+"keyboard": ["汽&quot;,&quot;水&quot;,&quot;爱&quot;,&quot;中&quot;,&quot;国"]
 },
 {
-"answer": "爱因斯坦",
+"answer": ["爱&quot;,&quot;因&quot;,&quot;斯&quot;,&quot;坦"],
 "ID": 2,
 "category": "明星&名人",
-"keyboard": "艾米纳姆基摩居里夫人尔奇耐"
+"keyboard": ["艾&quot;,&quot;米&quot;,&quot;纳&quot;,&quot;姆&quot;,&quot;基&quot;,&quot;摩&quot;,&quot;居&quot;,&quot;里&quot;,&quot;夫&quot;,&quot;人&quot;,&quot;尔&quot;,&quot;奇&quot;,&quot;耐"]
 },
 {
 "answer": "雪碧",

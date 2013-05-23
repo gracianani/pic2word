@@ -1,10 +1,6 @@
 var preload;
 function OnEnterPreloadState() {
-
-    $("#page-preload").siblings().css("display", "none");
-    $("#page-preload").css("display", "block");
-    $(".ui-progress").css("width", "0%").css("display", "block").find(".ui-label").css("display", "block");
-
+    ptwUI.showLoadingUI();
 	controller.loadQuestions();
 }
 
@@ -24,25 +20,21 @@ function preloadImages(questions) {
         preload.addEventListener("fileload", handleFileLoad);
     }
     preload.loadManifest(manifest);
-
 }
 
 function handleProgress(event) {
-
-    $(".ui-progress").css("width", event.loaded * 100 + "%").find(".value").html(event.loaded * 100 + "%");
+    ptwUI.showLoadingUIProgress(event);
 }
 
 function handleFileLoad(event) {
     var question = new Question(controller.questionRepo[event.item.id], event.result.src);
-    question.update();
-    $("#questions").append(question.questionUI);
+    ptwUI.addQuestion(question);
 }
 
 function handleComplete() 
 {
     setTimeout(function () {
-        $('.question').css('display', 'none');
-        showCurrentQuestion();
+        ptwUI.showCurrentQuestion();
         SM.SetStateByName("inGame");
     }, 1000);
 }

@@ -3,17 +3,8 @@
     this.questionData["imageUrl"] = imageUrl;
     this.questionUI = "";
     this.update = function () {
+        console.log(this.questionData);
         var compiledTemplate = Mustache.compile(document.getElementById("questionTmpl").text);
         this.questionUI = compiledTemplate(this.questionData);
     }
-}
-
-function changeQuestion(previousQuestionId, nextQuestionId)
-{
-    $('#question-' + previousQuestionId).css('display', 'none');
-    $('#question-' + nextQuestionId).css('display', 'block');
-}
-
-function showCurrentQuestion() {
-    $('#question-' + controller.currentQuestionId).css('display', 'block');
 }

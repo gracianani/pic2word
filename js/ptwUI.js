@@ -43,10 +43,12 @@ PtwUI.prototype.init = function() {
 }
 
 PtwUI.prototype.showMenuUI= function(){
-	
+    $("#page-start").siblings().css("display", "none");
+    $("#page-start").css("display", "block");
 }
 PtwUI.prototype.showInGameUI= function(){
-	
+    $("#page-play").siblings().css("display", "none");
+    $("#page-play").css("display", "block");
 }
 PtwUI.prototype.onFailed= function() {
 	
@@ -54,20 +56,32 @@ PtwUI.prototype.onFailed= function() {
 PtwUI.prototype.showSuccessUI= function(){
 	
 }
-PtwUI.prototype.showNextQuestion= function(){
-	
+PtwUI.prototype.showNextQuestion = function (previousQuestionId, nextQuestionId) {
+    $('#question-' + previousQuestionId).css('display', 'none');
+    $('#question-' + nextQuestionId).css('display', 'block');
+}
+PtwUI.prototype.showCurrentQuestion = function () {
+    $('.question').css('display', 'none');
+    $('#question-' + controller.currentQuestionId).css('display', 'block');
 }
 PtwUI.prototype.showLoadingUI= function(){
-	
+    $("#page-preload").siblings().css("display", "none");
+    $("#page-preload").css("display", "block");
+    $(".ui-progress").css("width", "0%").css("display", "block").find(".ui-label").css("display", "block");
+
 }
+PtwUI.prototype.showLoadingUIProgress = function (event) {
+    $(".ui-progress").css("width", event.loaded * 100 + "%").find(".value").html(event.loaded * 100 + "%");
+}
+
 PtwUI.prototype.showHelpUI= function(){
 	
 }
 PtwUI.prototype.isAnserCorrect= function(){
 	
 }
-PtwUI.prototype.addQuestion = function () {
-	
+PtwUI.prototype.addQuestion = function (question) {
+    question.update();
+    $("#questions").append(question.questionUI);
 }
-
 var ptwUI = new PtwUI();

@@ -36,10 +36,7 @@ PtwUI.prototype.init = function() {
 
    }); 
    
-   $('#start-btnPlay').click(function(){
-   	$('#page-start').removeClass('current-page').addClass('animated bounceOutLeft').hide();
-   	$('#page-play').addClass('current-page').addClass('animated bounceInRight').show();
-   });
+
 }
 
 PtwUI.prototype.showMenuUI= function(){
@@ -47,8 +44,8 @@ PtwUI.prototype.showMenuUI= function(){
     $("#page-start").css("display", "block");
 }
 PtwUI.prototype.showInGameUI= function(){
-    $("#page-play").siblings().css("display", "none");
-    $("#page-play").css("display", "block");
+    $('.current-page').removeClass('current-page').addClass('animated bounceOutLeft');
+    $('#page-play').addClass('current-page').addClass('animated bounceInRight').show();
 }
 PtwUI.prototype.onFailed= function() {
 	
@@ -71,7 +68,11 @@ PtwUI.prototype.showLoadingUI= function(){
 
 }
 PtwUI.prototype.showLoadingUIProgress = function (event) {
-    $(".ui-progress").css("width", event.loaded * 100 + "%").find(".value").html(event.loaded * 100 + "%");
+    $('.current-page').removeClass('current-page').addClass('animated bounceOutLeft');
+    $('#page-preload').addClass('current-page').addClass('animated bounceInRight').show();
+    $(".ui-progress").css("width", "0%").css("display", "block").find(".ui-label").css("display", "block");
+
+    $(".ui-progress").css("width", event.loaded * 100 + "%").find(".value").html(parseInt(event.loaded * 100) + "%");
 }
 
 PtwUI.prototype.showHelpUI= function(){

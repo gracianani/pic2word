@@ -67,7 +67,7 @@ PtwUI.prototype.showCurrentQuestion = function () {
 }
 PtwUI.prototype.showLoadingUI= function(){
     $('.current-page').removeClass('current-page').addClass('animated bounceOutLeft');
-    $('#page-preload').addClass('current-page').addClass('animated bounceInRight').show();
+    $('#page-preload').removeClass("animated bounceInRight bounceOutLeft").addClass('current-page').addClass('animated bounceInRight').show();
     $(".ui-progress").css("width", "0%").css("display", "block").find(".ui-label").css("display", "block");
 
 }

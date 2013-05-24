@@ -132,7 +132,7 @@
     <Content Include="js\Controller.js" />
     <Content Include="js\InGameState.js" />
     <Content Include="js\libs\webtoolkit.sprintf.js" />
-    <Content Include="js\ptwUI.js" />
+    <Content Include="js\PtwUI.js" />
     <Content Include="js\MenuState.js" />
     <Content Include="js\plugins.js" />
     <Content Include="js\PreloadState.js" />

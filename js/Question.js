@@ -5,7 +5,9 @@
         return this["answer"].split("");
     };
     this.questionData["keyboardArray"] = function () {
-        return this["keyboard"].split("");
+        var defaultchars = $.merge(this["keyboard"].split(""), this["answer"].split(""));
+        var otherchars = getNElementFromArray(controller.charactors, 24 - defaultchars.length);
+        return shuffleArray($.merge(defaultchars, otherchars));
     };
     this.questionUI = "";
     this.update = function () {

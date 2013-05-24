@@ -3,3 +3,5 @@ c:\Users\yaqiZhao\Documents\Visual Studio 2010\Projects\PicToWordV2\PicToWordV2\
 c:\Users\yaqiZhao\Documents\Visual Studio 2010\Projects\PicToWordV2\PicToWordV2\obj\Debug\ResolveAssemblyReference.cache
 c:\Users\yaqiZhao\Documents\Visual Studio 2010\Projects\PicToWordV2\PicToWordV2\obj\Debug\PicToWordV2.dll
 c:\Users\yaqiZhao\Documents\Visual Studio 2010\Projects\PicToWordV2\PicToWordV2\obj\Debug\PicToWordV2.pdb
+C:\Users\yaqiZhao\documents\visual studio 2010\projects\PicToWordV2\PicToWordV2\bin\data\level2.json
+C:\Users\yaqiZhao\documents\visual studio 2010\projects\PicToWordV2\PicToWordV2\bin\data\level1.json

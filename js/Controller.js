@@ -8,6 +8,7 @@ function Controller() {
     this.questionRepo = [];
     this.currentQuestionBatch = 1;
     this.forceFromCurrent = false;
+    this.loadCharactors();
 }
 
 Controller.currentQuestionId;
@@ -15,6 +16,7 @@ Controller.currentQuestionIndex;
 Controller.questionRepo;
 Controller.currentQuestionBatch;
 Controller.forceFromCurrent;
+Controller.charactors;
 
 Controller.prototype.startGame = function () {
     if (readCookie(GameCookieKey) != null) {
@@ -24,6 +26,13 @@ Controller.prototype.startGame = function () {
 
 Controller.prototype.stopGame = function()
 {
+}
+
+Controller.prototype.loadCharactors = function () {
+    var that = this;
+    $.getJSON("data/charactors.json", function (data) {
+        that.charactors = data["charactors"];
+    });
 }
 
 Controller.prototype.loadFromCookie = function () {
@@ -52,12 +61,20 @@ Controller.prototype.loadQuestions = function () {
         that.saveInCookie();
         preloadImages(that.questionRepo);
     });
-    
 }
 
-Controller.prototype.isAnswerCorrect = function (answerText) {
-    if (this.questionRepo[this.currentQuestionIndex]["answer"] == answerText) {
+Controller.prototype.isAnswerCorrect = function () {
+    var answerText = '';
+    $(sprintf("#question-%d .answer-key", this.currentQuestionId)).filter(function () {
+        return $(this).attr("data-key") != "";
+    }).each(function (index, elem) {
+        answerText += elem.getAttribute("data-key");
+    });
+    return this.isAnswerCorrectByText(answerText);
+}
 
+Controller.prototype.isAnswerCorrectByText = function (answerText) {
+    if (this.questionRepo[this.currentQuestionIndex]["answer"] == answerText) {
         return true;
     }
     return false;

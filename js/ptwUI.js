@@ -21,16 +21,10 @@ PtwUI.prototype.init = function() {
 	this.stage = $('body');
 	this.menuUI = this.stage.find('#page-start');
 	this.inGameUI = this.stage.find('#page-play');
-	
-	
 	this.questionUIs = this.inGameUI.find('.question');
-	
 	this.currentLevel = 0;
 	this.answer = '';
 	this.animationList = [];
-	
-   
-
 }
 
 PtwUI.prototype.showMenuUI= function(){
@@ -43,8 +37,8 @@ PtwUI.prototype.showInGameUI= function(){
     $('.current-page').removeClass('current-page').addClass('animated bounceOutLeft');
     $('#page-play').addClass('current-page').addClass('animated bounceInRight').show();
 }
-PtwUI.prototype.onFailed= function() {
-	
+PtwUI.prototype.onFailed = function () {
+    alert("wrong");
 }
 PtwUI.prototype.showSuccessUI= function(){
 	$('#play-success').show();
@@ -84,8 +78,11 @@ PtwUI.prototype.showLoadingUIProgress = function (event) {
 PtwUI.prototype.showHelpUI= function(){
 	
 }
-PtwUI.prototype.isAnserCorrect= function(){
-	
+PtwUI.prototype.appendCharactor= function(answer_spot, question_spot){
+    answer_spot.attr("data-key", question_spot.attr("data-key")).html(question_spot.attr("data-key"));
+}
+PtwUI.prototype.removeCharactor = function (remove_spot) {
+    remove_spot.attr("data-key", '').html('');
 }
 PtwUI.prototype.addQuestion = function (question) {
     question.update();

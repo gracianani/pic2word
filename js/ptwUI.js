@@ -17,6 +17,7 @@ PtwUI.answer;
 PtwUI.animationList;
 PtwUI.timeout;
 PtwUI.controller;
+PtwUI.touchEvent;
 
 PtwUI.prototype.init = function() {
 	this.stage = $('body');
@@ -29,7 +30,15 @@ PtwUI.prototype.init = function() {
 	this.animationList = [];
 	
 	var that = this;
-	this.successUI.find('#play-success-next').click(function(){
+	
+	
+	if ( is_touch_device() ) {
+		this.touchEvent = 'touchstart';
+	} else {
+		this.touchEvent = 'click';
+	}
+	
+	this.successUI.find('#play-success-next').on(this.touchEvent, function(){
             that.showCurrentQuestion();
 	});
 }

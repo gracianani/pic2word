@@ -118,7 +118,7 @@ nav a:hover {
    ============== */
 
 .main {
-    padding: 3em 0 0;
+    padding: 2em 0 0;
 }
 
 .main article h1 {
@@ -353,8 +353,13 @@ li,ul {
 	margin-right: 0;
 }
 .answer-key:hover,.answer-key:active {
-	background: #000;
-	color: #dc8b0c;
+	background: #dc8b0c;
+	color: #000;
+	-webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	-ms-transform: scale(1.2);
+	-o-transform: scale(1.2);
+	transform: scale(1.2);
 }
 hr {
 	border-top: 1px solid #000;
@@ -681,12 +686,23 @@ and (orientation : landscape) {
         float: right;
         width: 38%;
     }
+    .question-pic {
+	    width: 350px;
+	    height: 350px;
+	    margin-bottom: 1em;
+    }
+    .answer-key {
+	    font-size: 1.5em;
+		width: 2em;
+		height: 2em;
+		line-height: 2em;
+    }
     .question-keyboard {
 	    position: relative;
-	    top: 40px;
+	    top: 20px;
     }
     .question-key {
-		font-size: 1.5em;
+		font-size: 2em;
 		width: 2em;
 		height: 2em;
 		line-height: 2em;

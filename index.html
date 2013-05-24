@@ -36,13 +36,13 @@
 	            <div class="main wrapper clearfix">
 	            	<article>
 	            		<div id="start-icon">
-		                    <div id="start-level" class="animated tada">
+		                    <div id="start-level">
 		                    100
 		                    </div>
 	                    </div>
 	            	</article>
-	            	<aside>
-	                    <a id="start-btnPlay" class="btn btn-success btn-big animated bounceInUp">
+	            	<aside class="loading">
+	                    <a id="start-btnPlay" class="btn btn-success btn-big">
 	                    Play
 	                    </a>
 	            	</aside>
@@ -71,6 +71,17 @@
 	            	</div>
 	            </div> <!-- #main -->
 	        </div> 
+	        <div id="play-success">
+	        	<div class="main wrapper clearfix">
+	        		<section id="play-success-title">答案正确</section>
+	        		<section id="play-success-level">100</section>
+	        		<section id="play-success-answer">CORONA</section>
+	        		<section id="play-success-action">
+	        			<a id="play-success-next" class="btn btn-success">下一题</a>
+	        			<a id="play-success-share" class="btn btn-info">分享</a>
+	        		</section>
+	        	</div>
+	        </div>
         </div><!-- #page-play -->
 
         <div id="page-preload" class="page none">
@@ -93,7 +104,7 @@
 		        	</div>
 	            </div>
         </div>
-            <!--  -->
+            <!--#page-preload  -->
 
         <script src="js/vendor/jquery-1.9.1.min.js"></script>
         <script src="js/vendor/mustache.js" type="text/javascript"></script>

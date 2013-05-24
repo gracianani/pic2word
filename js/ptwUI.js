@@ -17,7 +17,8 @@ PtwUI.answer;
 PtwUI.animationList;
 PtwUI.timeout;
 PtwUI.controller;
-PtwUI.touchEvent;
+PtwUI.touchStart;
+PtwUI.touchEnd;
 
 PtwUI.prototype.init = function() {
 	this.stage = $('body');
@@ -33,21 +34,26 @@ PtwUI.prototype.init = function() {
 	
 	
 	if ( is_touch_device() ) {
-		this.touchEvent = 'touchstart';
+		this.touchStart = 'touchstart';
+		this.touchEnd = 'touchend';
 	} else {
-		this.touchEvent = 'click';
+		this.touchStart = 'click';
+		this.touchEnd = 'click';
 	}
 	
-	this.successUI.find('#play-success-next').on(this.touchEvent, function(){
+	this.successUI.find('#play-success-next').on(this.touchStart, function(){
             that.showCurrentQuestion();
 	});
 }
 
 PtwUI.prototype.showMenuUI= function(){
    	this.menuUI.find('.loading').removeClass('loading');
+   	this.currentLevel = this.controller.currentQuestionId;
+   	$('#start-level').html(this.currentLevel);
     this.addAnimation('#start-btnPlay', 'bounceInUp', 500, null);
     this.addAnimation('#start-level', 'bounceIn', 500, null);
     this.playAnimationsFrom(0);
+    
 }
 PtwUI.prototype.showInGameUI= function(){
     $('.current-page').removeClass('current-page').addClass('animated bounceOutLeft');
@@ -129,10 +135,12 @@ PtwUI.prototype.showHelpUI= function(){
 PtwUI.prototype.appendCharactor= function(answer_spot, question_spot){
     answer_spot.attr("data-key", question_spot.attr("data-key")).html(question_spot.attr("data-key"));
     question_spot.css('visibility','hidden');
+    answer_spot.attr('data-index', question_spot.attr('data-index'));
     this.updateAnswerText();
 }
 PtwUI.prototype.removeCharactor = function (remove_spot) {
     remove_spot.attr("data-key", '').html('');
+    $('.question-key[data-index="'+remove_spot.attr("data-index") +'"]').css('visibility','visible');
     this.updateAnswerText();
 }
 PtwUI.prototype.addQuestion = function (question) {

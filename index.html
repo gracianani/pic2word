@@ -37,7 +37,7 @@
 	            	<article>
 	            		<div id="start-icon">
 		                    <div id="start-level">
-		                    100
+		                    0
 		                    </div>
 	                    </div>
 	            	</article>
@@ -59,7 +59,7 @@
 	        <div class="header-container">
 	            <header class="wrapper clearfix">
 	                <a id="play-level">
-		                    100
+		                    0
 		            </a>
 	            </header>
 	        </div>
@@ -151,7 +151,7 @@
 	        <aside>
 		    <ul class='question-keyboard clearfix'>
                 {{#keyboardArray}}
-                    <li data-key='{{.}}' class='question-key'>{{.}}</li>
+                    <li data-key='{{value}}' data-index='{{index}}' class='question-key'>{{value}}</li>
                 {{/keyboardArray}}
 		    </ul>
 	        </aside>

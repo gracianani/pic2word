@@ -3,7 +3,7 @@ function OnEnterInGameState() {
     ptwUI.showInGameUI();
     ptwUI.showCurrentQuestion();
 	//register key functions
-    $('.question-key').on(ptwUI.touchEvent,function (e) {
+    $('.question-key').on(ptwUI.touchEnd,function (e) {
         var emptyKeys = $(this).parents(".question").find(".answer-key[data-key='']");
         var emptyKeysCount = emptyKeys.length;
         if (emptyKeysCount > 0) {
@@ -21,7 +21,7 @@ function OnEnterInGameState() {
         }
     });
 
-    $(".answer-key").on(ptwUI.touchEvent,function (e) {
+    $(".answer-key").on(ptwUI.touchEnd,function (e) {
         var data_key = $(this).attr("data-key");
         if (data_key != null && data_key != '') {
             ptwUI.removeCharactor($(this));

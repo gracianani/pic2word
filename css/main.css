@@ -353,8 +353,8 @@ li,ul {
 	margin-right: 0;
 }
 .answer-key:hover,.answer-key:active {
-	background: #dc8b0c;
-	color: #000;
+	background: #000;
+	color: #dc8b0c;
 	-webkit-transform: scale(1.2);
 	-moz-transform: scale(1.2);
 	-ms-transform: scale(1.2);

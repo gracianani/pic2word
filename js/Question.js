@@ -7,7 +7,11 @@
     this.questionData["keyboardArray"] = function () {
         var defaultchars = $.merge(this["keyboard"].split(""), this["answer"].split(""));
         var otherchars = getNElementFromArray(controller.charactors, 24 - defaultchars.length);
-        return shuffleArray($.merge(defaultchars, otherchars));
+        var returnArray = [];
+        shuffleArray($.merge(defaultchars, otherchars)).forEach(function(value,index){
+        	returnArray.push({'index':index,'value':value});
+        });
+        return returnArray;
     };
     this.questionUI = "";
     this.update = function () {

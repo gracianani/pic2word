@@ -11,8 +11,8 @@ function OnEnterInGameState() {
             emptyKeysCount = emptyKeysCount - 1;
             if (emptyKeysCount == 0) {
                 if (controller.isAnswerCorrect()) {
-                    ptwUI.showNextQuestion(controller.currentQuestionId, controller.nextQuestionId);
-                    controller.processToNextQuestion();
+                	controller.processToNextQuestion();
+                    ptwUI.showSuccessUI();
                 }
                 else {
                     ptwUI.onFailed();

@@ -126,6 +126,7 @@
                 ptwUI.init();
                 canvas = $("#container");
                 controller = new Controller(canvas);
+                ptwUI.controller = controller;
                 controller.startGame();
                 SM.RegisterState("preload", PreloadState);
                 SM.RegisterState("menu", MenuState);

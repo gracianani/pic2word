@@ -155,8 +155,13 @@ body,html {
 img {
 	max-width: 100%;
 }
-body {
+a {
+	text-decoration: none;
+}
+html {
 	background:#2d2d2d url(../img/bodybg.png);
+}
+body {
 	color: #FFF;
 	-moz-user-select: none;
    -webkit-user-select: none;
@@ -169,9 +174,9 @@ h1,h2,h3,h4 {
 	font-weight: normal;
 }
 .header-container h1 {
-	font-size: 18px;
+	font-size: 20px;
 	margin: 0;
-	line-height: 35px;
+	line-height: 40px;
 	text-align: center;
 	width: 100%;
 	text-shadow: 1px 1px 0 #000;
@@ -180,6 +185,7 @@ h1,h2,h3,h4 {
 	text-align: center;
 	height: 45px;
 	background-size:auto 100%;
+	box-shadow: 5px 0 15px #000;
 }
 #start-icon {
 	background: url(../img/icon-512.png) left top no-repeat;
@@ -215,6 +221,7 @@ h1,h2,h3,h4 {
 	padding: 10px;
 	cursor: pointer;
 	display: inline-block;
+	border-bottom:5px solid #103d46;
 }
 .btn-big {
 	text-transform: uppercase;
@@ -464,6 +471,106 @@ body {
 	background:url(../img/loader.gif) no-repeat center center;
 	min-height: 100px;
 }
+.pannel {
+	position: absolute;
+	z-index: 100;
+	height: 100%;
+	width: 76%;
+	padding: 0 5%;
+	background: #d9d9d3 url(../img/pannelbg.png);
+	color: #333;
+	left: 100%;
+	overflow: scroll;
+	box-shadow: 0 -5px 15px #000;
+}
+#pannel-overlay {
+	position: absolute;
+	z-index: 100;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+.pannel .btn{
+	margin-top: 10px;
+	line-height: 1.2em;
+	width: 70%;
+	padding-left: 44px;
+	position: relative;
+}
+h4 {
+	color: #000;
+	margin-bottom: 0;
+}
+.credit {
+	zoom: 1;
+	color: #000;
+	text-shadow: 1px 1px 0 #FFF;
+	margin-bottom: 10px;
+	min-height: 36px;
+	display: block;
+}
+.credit img{
+	border-radius: 18px;
+	width: 36px;
+	height: 36px;
+	float: left;
+	display: inline-block;
+	vertical-align: top;
+}
+.credit span {
+	height: 36px;
+	line-height: 18px;
+	font-size: 12px;
+	width: 180px;
+	padding-left: 10px;
+	display: inline-block;
+}
+.header-container .btn-openHelpPannel {
+	position: absolute;
+	right: 10px;
+	top: 5px;
+	padding: 5px;
+	line-height: 24px;
+	height: 20px;
+	border-bottom-width: 2px;
+	border-radius: 5px;
+}
+.icon {
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	display: inline-block;
+	background-image: url(../img/icons.png);
+	vertical-align: top;
+}
+.icon-more {
+	background-position: 0 -24px;
+}
+.icon-ipad {
+	background-position: 0 -48px;
+}
+.icon-wechat {
+	background-position: 0 0;
+}
+.icon-url {
+	background-position: 0 -72px;
+}
+.pannel .btn .icon {
+		position: absolute;
+		left: 10px;
+		top: 50%;
+		margin-top: -12px;
+}
+#page-finish {
+	
+}
+#page-finish aside{
+	text-align: center;
+}
+#page-finish .btn {
+	margin-bottom: 10px;
+	width: 80%;
+}
 /* ==========================================================================
    Media Queries
    ========================================================================== */
@@ -500,7 +607,24 @@ and (orientation : landscape) {
     .header-container {
 		height: 32px;
 		line-height: 32px;
-		
+	}
+	.header-container h1 {
+		font-size: 18px;
+		line-height: 30px;
+		text-align: left;
+		padding-left: 10px;
+	}
+	.header-container .btn-openHelpPannel {
+		height: 32px;
+		line-height: 32px;
+	}
+	.header-container .btn-openHelpPannel .icon{
+		width: 32px;
+		height: 32px;
+		line-height: 32px;
+		background-image:url(../img/icons-48.png);
+		background-size: 32px auto;
+		background-position: 0 -32px;
 	}
 	#start-icon {
 		margin-top: 10px;
@@ -580,6 +704,23 @@ and (orientation : landscape) {
 		margin: 0 10px 0 10px;
 		vertical-align: text-top;
 	}
+	.pannel .btn{
+		width: 30%;
+		vertical-align: top;
+		
+	}
+	
+	
+}
+@media 
+(-webkit-min-device-pixel-ratio: 2), 
+(min-resolution: 192dpi) { 
+    /* Retina-specific stuff here */
+    .icon {
+		background-image: url(../img/icons-48.png);
+		background-size: 100% auto;
+	}
+	
 }
 @media only screen and (min-width: 768px) {
 	.question-key {
@@ -658,7 +799,10 @@ and (orientation : landscape) {
 	   margin-bottom: 1em;
 	   font-size: 2em;
    }
-   
+   .pannel .btn{
+		width: 40%;
+		vertical-align: top;
+	}
 
 }
 
@@ -719,6 +863,38 @@ and (orientation : landscape) {
 		display: inline-block;
 		margin: 0 15px 0 15px;
 		vertical-align: text-top;
+	}
+	.pannel {
+		margin-left: 40%;
+	}
+	.pannel .btn{
+		width: auto;
+	}
+	h4 {
+		color: #000;
+		margin-bottom: 10px;
+		font-size: 18px;
+	}
+	.credit {
+		margin-bottom: 15px;
+		min-height: 72px;
+		display: block;
+	}
+	.credit img{
+		border-radius: 36px;
+		width: 72px;
+		height: 72px;
+		float: left;
+		display: inline-block;
+		vertical-align: top;
+	}
+	.credit span {
+		height: 72px;
+		line-height: 36px;
+		font-size: 18px;
+		width: 300px;
+		padding-left: 10px;
+		display: inline-block;
 	}
 }
 

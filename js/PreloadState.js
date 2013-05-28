@@ -2,6 +2,7 @@ var preload;
 function OnEnterPreloadState() {
     ptwUI.showLoadingUI();
 	controller.loadQuestions();
+	_hmt.push(['_trackPageview', '/preload']);
 }
 
 function OnExitPreloadState()

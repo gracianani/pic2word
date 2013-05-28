@@ -1,7 +1,3 @@
-document.body.onselectstart = document.body.ondrag = function(){
-    return false;
-}
-
 function PtwUI () {
 }
 
@@ -26,13 +22,15 @@ PtwUI.prototype.init = function() {
 	this.inGameUI = this.stage.find('#page-play');
 	this.questionUIs = this.inGameUI.find('.question');
 	this.successUI = this.inGameUI.find('#play-success');
+	this.morePannel = this.stage.find('#pannel-overlay');
 	this.currentLevel = 0;
 	this.answer = '';
 	this.animationList = [];
 	
 	var that = this;
 	
-	
+	$('body').on('selectstart,drag',function(e){
+	});
 	if ( is_touch_device() ) {
 		this.touchStart = 'touchstart';
 		this.touchEnd = 'touchend';
@@ -41,8 +39,38 @@ PtwUI.prototype.init = function() {
 		this.touchEnd = 'click';
 	}
 	
+
+	detectWeixinApi(function(){
+		$('.weixin').show();
+	});
+	
+	 
+	this.stage.find('.btn-openHelpPannel').on(this.touchEnd, function(){
+		that.morePannel.show();
+		that.morePannel.find('.pannel').animate({left:'20%'});
+	});
+	
+	this.morePannel.on(this.touchStart, function() {
+		that.morePannel.find('.pannel').animate({left:'100%'},'fast','swing',function(){
+			that.morePannel.hide();
+		});
+		_hmt.push(['_trackPageview', '/more']);
+	});
+	this.morePannel.find('.pannel').on(this.touchStart, function(e) {
+		stopBubble(e);
+	});
+	this.stage.find('.btnCopyUrl').on(this.touchStart, function(e) {
+		_hmt.push(['_trackEvent', 'CopyUrl', 'click']);
+		copyToClipboard('http://ptw.hortor.net');
+	});
+
 	this.successUI.find('#play-success-next').on(this.touchStart, function(){
-            that.showCurrentQuestion();
+        if ( that.controller.needPreload == true ) {
+			SM.SetStateByName("preload");
+		} else {
+			that.showCurrentQuestion();
+		}
+		
 	});
 }
 
@@ -57,6 +85,7 @@ PtwUI.prototype.showMenuUI= function(){
 }
 PtwUI.prototype.showInGameUI= function(){
     $('.current-page').removeClass('current-page').addClass('animated bounceOutLeft');
+    this.inGameUI.attr('class','page none');
     this.inGameUI.addClass('current-page').addClass('animated bounceInRight').show();
 }
 PtwUI.prototype.onFailed = function () {
@@ -81,6 +110,7 @@ PtwUI.prototype.showSuccessUI= function(){
 	this.successUI.find('#play-success-answer').html(this.answer);
 	
 	this.successUI.show();
+	_hmt.push(['_trackPageview', '/success']);
     
 	this.addAnimation('#play-success-title', 'bounceIn', 500, null);
     this.addAnimation('#play-success-level', 'bounceIn', 500, null);
@@ -97,9 +127,8 @@ PtwUI.prototype.showCurrentQuestion = function () {
 	this.answer = '';
 	this.currentLevel = this.controller.currentQuestionId;
 	
-	
 	this.hideSuccessUI();
-    $('.question').css('display', 'none');
+    $('.question').hide();
     this.setQuestionLevelText();
     
     if (this.currentQuestionUI) {
@@ -120,7 +149,8 @@ PtwUI.prototype.setAnswerBoxPosition = function(currentQuestion) {
    
 }
 PtwUI.prototype.showLoadingUI= function(){
-    $('.current-page').removeClass('current-page').addClass('animated bounceOutLeft');
+	this.hideSuccessUI();
+    $('.current-page').removeClass('current-page').hide();//addClass('animated bounceOutLeft');
     $('#page-preload').removeClass("animated bounceInRight bounceOutLeft").addClass('current-page').addClass('animated bounceInRight').show();
     $(".ui-progress").css("width", "0%").css("display", "block").find(".ui-label").css("display", "block");
 

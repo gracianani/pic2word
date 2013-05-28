@@ -44,3 +44,34 @@ function is_touch_device() {
   return !!('ontouchstart' in window) // works on most browsers 
       || !!('onmsgesturechange' in window); // works on ie10 
 }
+
+function detectWeixinApi(callback){
+    if(typeof window.WeixinJSBridge == 'undefined' || typeof window.WeixinJSBridge.invoke == 'undefined'){
+        setTimeout(function(){
+            detectWeixinApi(callback);
+        },200);
+    }else{
+        callback();
+    }
+}
+function stopBubble(e) {
+        if ( e && e.stopPropagation ) {
+            e.stopPropagation();
+         }
+        else {
+            window.event.cancelBubble = true;
+        }
+}
+function copyToClipboard(txt) {
+	//IE 
+	if(window.clipboardData)  
+	{
+		window.clipboardData.clearData();  
+		window.clipboardData.setData("Text", txt);  
+	}  
+	else  
+	{  
+		window.prompt("您可以复制以下游戏地址", txt);  
+	}  
+ 
+} 

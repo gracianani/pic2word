@@ -17,6 +17,7 @@ Controller.questionRepo;
 Controller.currentQuestionBatch;
 Controller.forceFromCurrent;
 Controller.charactors;
+Controller.needPreload;
 
 Controller.prototype.startGame = function () {
     if (readCookie(GameCookieKey) != null) {
@@ -87,14 +88,17 @@ Controller.prototype.processToNextQuestion = function () {
         this.currentQuestionId++;
         this.nextQuestionId++;
         this.saveInCookie();
+        controller.needPreload = false;
     }
     else {
         this.forceFromCurrent = false;
         this.currentQuestionBatch++;
-        SM.SetStateByName("preload");
+        //SM.SetStateByName("preload");
+        controller.needPreload = true;
     }
 
 }
+
 
 Controller.prototype.removeLetters = function () {
 }

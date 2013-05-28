@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿<?php  
+ echo('here');
+ header("Access-Control-Allow-Origin:*");
+?>
+<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -6,8 +10,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>疯狂猜图</title>
-        <meta name="description" content="好玩的看图猜词游戏，知识面大考验，脑力激荡～">
+        <title></title>
+        <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -17,9 +21,7 @@
         <link rel="stylesheet" href="css/main.css">
         <link href="css/ui.progress-bar.css" rel="stylesheet" type="text/css" />
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-        <script>
-		var _hmt = _hmt || [];
-		</script>
+    
     </head>
     <body onload="init();" ontouchstart="">
         <!--[if lt IE 7]>
@@ -31,7 +33,6 @@
 	        <div class="header-container">
 	            <header class="wrapper clearfix">
 	                <h1 class="title">疯狂猜图</h1>
-	                <a class="btn btn-info btn-openHelpPannel"><i class="icon-more icon"></i></a>
 	            </header>
 	        </div>
 	
@@ -64,7 +65,6 @@
 	                <a id="play-level">
 		                    0
 		            </a>
-		            <a class="btn btn-info btn-openHelpPannel"><i class="icon-more icon"></i></a>
 	            </header>
 	        </div>
 	
@@ -78,11 +78,18 @@
 	        <div id="play-success">
 	        	<div class="main wrapper clearfix">
 	        		<section id="play-success-title">答案正确</section>
-	        		<section id="play-success-level">0</section>
-	        		<section id="play-success-answer"></section>
+	        		<section id="play-success-level">100</section>
+	        		<section id="play-success-answer">CORONA</section>
 	        		<section id="play-success-action">
-	        			<a id="play-success-share" class="btn btn-info btn-openHelpPannel"><i class="icon-more icon"></i> 别点这里！</a>
-	        			<a id="play-success-next" class="btn btn-success">下一题</a>	        			
+	        			<a id="play-success-next" class="btn btn-success">下一题</a>
+	        			<a id="play-success-share" class="btn btn-info">分享</a>
+	        			
+	        			<div class="share-friend m-t-4" style="display:none;">
+    <a id="J_ShareToFriend" class="ios-button clearfix" href="javascript:void(0);" data-link="链接地址" data-title="分享的标题" data-desc="分享的描述" data-img="图片地址" >
+        <i class="icon2-friend m-t--5 m-r-5"></i>分享到朋友圈
+    </a>
+    
+</div>
 	        		</section>
 	        	</div>
 	        </div>
@@ -107,56 +114,14 @@
 		            </div><!-- #progress_bar -->
 		        	</div>
 	            </div>
-	         </div>
         </div>
-        <!--#page-finish  -->
-        <div id="page-finish" class="page none">
-        	<div class="header-container">
-	            <header class="wrapper clearfix">
-	                <h1 class="title">疯狂猜图</h1>
-	            </header>
-	        </div>
-	         <div class="main-container">
-	            <div class="main wrapper clearfix">
-	            <article>
-	            		<div id="start-icon">
-	                    </div>
-	            </article>
-	            <aside>
-	            <h3>恭喜你！答完了！</h3>
-	            <p>但是....下面有更多题目等着你！</p>
-	        	<a href="https://itunes.apple.com/cn/app/feng-kuang-cai-tu/id634331773?mt=8" class="btn btn-success" target="_blank" onclick="_hmt.push(['_trackEvent', 'AppDownload', 'click']);"><big>在AppStore下载完整版</big><br/><small>支持iPad iPhone</small></a>
-	        	
-		        <a class="btn btn-info" href="http://weixin.qq.com/r/kXUDDA7EAzB8hx9vnyC1" target="_blank" onclick="_hmt.push(['_trackEvent', 'FollowWechat', 'click']);"><big>关注微信: fengkuangcaitu</big><br /><small>每天都有新题目</small></a>
-		        
-		        <hr />
-		        <a class="btn btnCopyUrl"><i class="icon-url icon"></i> 拷贝游戏地址</a>
-	            </aside>
-	            </div>
-	         </div>
-        </div>
-        <!--#page-finish  -->
-        <div id="pannel-overlay" class="none">
-	        <div id="pannel-help" class="pannel">
-	        	<h4>分享“疯狂猜图"！</h4>
-	        	<div class="weixin none">点击右上方的<img src="img/weixin-share.jpg" width="50px" height="27px" alt="分享按钮">，或者</div>
-	        	<div><a class="btn btnCopyUrl"><i class="icon-url icon"></i> 拷贝游戏地址</a></div>
-	        	<h4>想要更多题目？</h4>
-	        	<a href="https://itunes.apple.com/cn/app/feng-kuang-cai-tu/id634331773?mt=8" class="btn btn-success" target="_blank" onclick="_hmt.push(['_trackEvent', 'AppDownload', 'click']);"><i class="icon-ipad icon"></i><big>AppStore<br>下载完整版</big><br/><small>支持iPad iPhone</small></a>
-	        	
-		        <a class="btn btn-info" href="http://weixin.qq.com/r/kXUDDA7EAzB8hx9vnyC1" target="_blank" onclick="_hmt.push(['_trackEvent', 'FollowWechat', 'click']);"><i class="icon-wechat icon"></i><big>关注微信: <br/>fengkuangcaitu</big><br /><small>每天都有新题目</small></a>
-		        
-		        <h4>关于我们</h4>
-		        <a class="credit clearfix" href="http://www.hortor.net" target="_blank"><img src="img/hortorlogo.png" /><span>Copyright 2013 Hortor Games<br />
-		        豪腾嘉科 版权所有</span></a>
-		        <a class="credit clearfix" href="http://www.seemeloo.com" target="_blank"><img src="img/smllogo.png" /><span>HTML技术支持<br />西米露工作室</span></a>
-	        </div>
-        </div>
+            <!--#page-preload  -->
+
         <script src="js/vendor/jquery-1.9.1.min.js"></script>
         <script src="js/vendor/mustache.js" type="text/javascript"></script>
-        <script src="js/vendor/webtoolkit.sprintf.js" type="text/javascript"></script>
-        <script src="js/vendor/preloadjs-0.3.1.min.js"></script>
+        <script src="js/libs/webtoolkit.sprintf.js" type="text/javascript"></script>
         <script src="js/Util.js" type="text/javascript"></script>
+        <script src="http://code.createjs.com/preloadjs-0.3.1.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/ptwUI.js" type="text/javascript"></script>
         <script src="js/State.js" type="text/javascript"></script>
@@ -207,10 +172,5 @@
             </div>
 	    </div>
         </script>
-        <!-- baidu -->
-        <script type="text/javascript">
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fba0f54270e3b8aeedf003ffa94058884' type='text/javascript'%3E%3C/script%3E"));
-</script>
     </body>
 </html>

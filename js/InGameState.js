@@ -28,6 +28,7 @@ function OnEnterInGameState() {
         }
     });
 	controller.startGame();
+	_hmt.push(['_trackPageview', '/ingame']);
 }
 
 function OnExitInGameState()

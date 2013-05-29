@@ -1,7 +1,12 @@
 var preload;
 function OnEnterPreloadState() {
     ptwUI.showLoadingUI();
-	controller.loadQuestions();
+    if ( controller.questions.length < 1 ) {
+	    controller.loadAllQuestions();
+    } else {
+	    controller.loadCurrentQuestions();
+    }
+	
 	_hmt.push(['_trackPageview', '/preload']);
 }
 

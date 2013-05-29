@@ -5,7 +5,9 @@ function Controller() {
     this.currentQuestionId;
     this.currentQuestionIndex;
     this.nextQuestionId;
+    this.questions = [];
     this.questionRepo = [];
+    this.questionRepoSize = 10;
     this.currentQuestionBatch = 1;
     this.forceFromCurrent = false;
     this.loadCharactors();
@@ -50,18 +52,35 @@ Controller.prototype.saveInCookie = function () {
     createCookie( GameCookieKey, this.currentQuestionId + "," + this.currentQuestionIndex + "," + this.currentQuestionBatch + "," + this.nextQuestionId, 1000);
 }
 
-Controller.prototype.loadQuestions = function () {
+Controller.prototype.loadAllQuestions = function () {
     var that = this;
-    $.getJSON(sprintf("data/level%d.json", this.currentQuestionBatch), function (data) {
-        that.questionRepo = data["questions"];
-        if (that.forceFromCurrent == false) {
-            that.currentQuestionIndex = 0;
-            that.currentQuestionId = data["questions"][that.currentQuestionIndex]["ID"];
-            that.nextQuestionId = that.currentQuestionId + 1;
-        }
-        that.saveInCookie();
-        preloadImages(that.questionRepo);
+    $.getJSON("data/questions.json", function(data) {
+    	that.questions = data["questions"];
+    	console.log(data["questionRepoSize"]);
+    	if ( data["questionRepoSize"] ) {
+	    	that.questionRepoSize = data["questionRepoSize"];
+    	}
+    	that.loadCurrentQuestions();
     });
+}
+Controller.prototype.loadCurrentQuestions = function() {
+	var start,end;
+	start = (this.currentQuestionBatch - 1) * this.questionRepoSize;
+	end = Math.min( this.questions.length, start + this.questionRepoSize);
+	if (this.forceFromCurrent == false) {
+            this.currentQuestionIndex = 0;
+            this.currentQuestionId = this.questionRepo[this.currentQuestionIndex]["ID"];
+            this.nextQuestionId = this.currentQuestionId + 1;
+    }
+    this.saveInCookie();
+    
+    if ( start > end ) {
+		//no more questions
+		SM.SetStateByName('finish');
+		return;
+	}
+	this.questionRepo = this.questions.slice(start, end);
+    preloadImages(this.questionRepo);
 }
 
 Controller.prototype.isAnswerCorrect = function () {

@@ -23,6 +23,7 @@ PtwUI.prototype.init = function() {
 	this.questionUIs = this.inGameUI.find('.question');
 	this.successUI = this.inGameUI.find('#play-success');
 	this.morePannel = this.stage.find('#pannel-overlay');
+	this.finishUI = this.stage.find("#page-finish");
 	this.currentLevel = 0;
 	this.answer = '';
 	this.animationList = [];
@@ -87,6 +88,11 @@ PtwUI.prototype.showInGameUI= function(){
     $('.current-page').removeClass('current-page').addClass('animated bounceOutLeft');
     this.inGameUI.attr('class','page none');
     this.inGameUI.addClass('current-page').addClass('animated bounceInRight').show();
+}
+PtwUI.prototype.showFinishUI = function() {
+	 $('.current-page').removeClass('current-page').addClass('animated bounceOutLeft');
+    this.finishUI.attr('class','page none');
+    this.finishUI.addClass('current-page').addClass('animated bounceInRight').show();
 }
 PtwUI.prototype.onFailed = function () {
     alert("wrong");

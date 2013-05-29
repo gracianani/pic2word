@@ -97,7 +97,17 @@
 	         <div class="main-container">
 	            <div class="main wrapper clearfix">
 		        	<div id="preload-ad">
-		            	<img  src="img/bannerAds.png" />
+		            	<script type="text/javascript">
+						     document.write('<a style="display:none!important" id="tanx-a-mm_43488035_4048900_13174466"></a>');
+						     tanx_s = document.createElement("script");
+						     tanx_s.type = "text/javascript";
+						     tanx_s.charset = "gbk";
+						     tanx_s.id = "tanx-s-mm_43488035_4048900_13174466";
+						     tanx_s.async = true;
+						     tanx_s.src = "http://p.tanx.com/ex?i=mm_43488035_4048900_13174466";
+						     tanx_h = document.getElementsByTagName("head")[0];
+						     if(tanx_h)tanx_h.insertBefore(tanx_s,tanx_h.firstChild);
+						</script>
 		        	</div>
 		        	<div id="progress_bar_container">
 		            <div id="progress_bar" class="ui-progress-bar ui-container">
@@ -164,6 +174,7 @@
         <script src="js/PreloadState.js" type="text/javascript"></script>
         <script src="js/MenuState.js" type="text/javascript"></script>
         <script src="js/InGameState.js" type="text/javascript"></script>
+        <script src="js/FinishState.js" type="text/javascript"></script>
         <script src="js/Controller.js" type="text/javascript"></script>
         <script>
             var controller;
@@ -177,6 +188,7 @@
                 SM.RegisterState("preload", PreloadState);
                 SM.RegisterState("menu", MenuState);
                 SM.RegisterState("inGame", InGameState);
+                SM.RegisterState("finish", FinishState);
                 SM.SetStateByName("menu");
             }
         </script>

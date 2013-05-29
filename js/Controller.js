@@ -10,6 +10,10 @@ function Controller() {
     this.questionRepoSize = 10;
     this.currentQuestionBatch = 1;
     this.forceFromCurrent = false;
+    this.minPreloadTime = 2000;
+    this.isPreloadFinished = false;
+    this.isPreloadTimeUp = false;
+    this.preloadTimer;
     this.loadCharactors();
 }
 
@@ -51,6 +55,13 @@ Controller.prototype.loadFromCookie = function () {
 Controller.prototype.saveInCookie = function () {
     createCookie( GameCookieKey, this.currentQuestionId + "," + this.currentQuestionIndex + "," + this.currentQuestionBatch + "," + this.nextQuestionId, 1000);
 }
+Controller.prototype.handlePreloadRequest = function() {
+	if ( this.questions.length < 1 ) {
+	    this.loadAllQuestions();
+    } else {
+	    this.loadCurrentQuestions();
+    }
+}
 
 Controller.prototype.loadAllQuestions = function () {
     var that = this;
@@ -67,6 +78,13 @@ Controller.prototype.loadCurrentQuestions = function() {
 	var start,end;
 	start = (this.currentQuestionBatch - 1) * this.questionRepoSize;
 	end = Math.min( this.questions.length, start + this.questionRepoSize);
+	if ( start > end ) {
+		//no more questions
+		this.saveInCookie();
+		SM.SetStateByName('finish');
+		return;
+	}
+	this.questionRepo = this.questions.slice(start, end);
 	if (this.forceFromCurrent == false) {
             this.currentQuestionIndex = 0;
             this.currentQuestionId = this.questionRepo[this.currentQuestionIndex]["ID"];
@@ -74,12 +92,7 @@ Controller.prototype.loadCurrentQuestions = function() {
     }
     this.saveInCookie();
     
-    if ( start > end ) {
-		//no more questions
-		SM.SetStateByName('finish');
-		return;
-	}
-	this.questionRepo = this.questions.slice(start, end);
+    
     preloadImages(this.questionRepo);
 }
 

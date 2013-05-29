@@ -1,19 +1,23 @@
 var preload;
 function OnEnterPreloadState() {
     ptwUI.showLoadingUI();
-    if ( controller.questions.length < 1 ) {
-	    controller.loadAllQuestions();
-    } else {
-	    controller.loadCurrentQuestions();
-    }
-	
+    controller.handlePreloadRequest();
 	_hmt.push(['_trackPageview', '/preload']);
+	
+	controller.isPreloadFinished = false;
+	controller.isPreloadTimeUp = false;
+	controller.preloadTimer = setTimeout("preloadTimeUp()", controller.minPreloadTime);
 }
 
 function OnExitPreloadState()
 {
 }
-
+function preloadTimeUp() {
+	controller.isPreloadTimeUp = true;
+	if ( controller.isPreloadFinished ) {	
+    	SM.SetStateByName("inGame");
+    }
+}
 function preloadImages(questions) {
     var manifest = [];
     for (var i = 0; i < questions.length; i = i + 1) {
@@ -39,9 +43,10 @@ function handleFileLoad(event) {
 
 function handleComplete() 
 {
-    setTimeout(function () {
-        SM.SetStateByName("inGame");
-    }, 1000);
+	controller.isPreloadFinished = true;
+	if ( controller.isPreloadTimeUp ) {	
+    	SM.SetStateByName("inGame");
+    }
 }
 
 var PreloadState = new State( OnEnterPreloadState, OnExitPreloadState );

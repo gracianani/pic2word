@@ -14,7 +14,9 @@ function Controller() {
     this.isPreloadFinished = false;
     this.isPreloadTimeUp = false;
     this.preloadTimer;
+    this.dataBaseUrl = "data/";
     this.loadCharactors();
+    
 }
 
 Controller.currentQuestionId;
@@ -28,6 +30,12 @@ Controller.needPreload;
 Controller.prototype.startGame = function () {
     if (readCookie(GameCookieKey) != null) {
         this.loadFromCookie();
+    }
+    var date = getURLParameter('date');
+    if ( date != null && date != "" ) {
+	    this.dataBaseUrl = "data/" + date + "/";
+	    this.forceFromCurrent = false;
+	    this.currentQuestionBatch = 1;
     }
 }
 
@@ -65,9 +73,8 @@ Controller.prototype.handlePreloadRequest = function() {
 
 Controller.prototype.loadAllQuestions = function () {
     var that = this;
-    $.getJSON("data/questions.json", function(data) {
+    $.getJSON( this.dataBaseUrl + "questions.json", function(data) {
     	that.questions = data["questions"];
-    	console.log(data["questionRepoSize"]);
     	if ( data["questionRepoSize"] ) {
 	    	that.questionRepoSize = data["questionRepoSize"];
     	}

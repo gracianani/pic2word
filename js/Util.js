@@ -44,6 +44,9 @@ function is_touch_device() {
   return !!('ontouchstart' in window) // works on most browsers 
       || !!('onmsgesturechange' in window); // works on ie10 
 }
+function is_ie_mobile() {
+	return !!(window.navigator.msPointerEnabled);
+}
 
 function detectWeixinApi(callback){
     if(typeof window.WeixinJSBridge == 'undefined' || typeof window.WeixinJSBridge.invoke == 'undefined'){

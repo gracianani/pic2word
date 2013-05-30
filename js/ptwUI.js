@@ -33,8 +33,14 @@ PtwUI.prototype.init = function() {
 	$('body').on('selectstart,drag',function(e){
 	});
 	if ( is_touch_device() ) {
-		this.touchStart = 'touchstart';
-		this.touchEnd = 'touchend';
+		if ( is_ie_mobile() ) {
+			this.touchStart = 'MSPointerDown';
+			this.touchEnd = 'MSPointerUp';
+		} else {
+			this.touchStart = 'touchstart';
+			this.touchEnd = 'touchend';
+		}
+		
 	} else {
 		this.touchStart = 'click';
 		this.touchEnd = 'click';

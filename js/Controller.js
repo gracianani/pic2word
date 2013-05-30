@@ -2,6 +2,7 @@ var GameCookieKey = "pic2wordkey";
 
 
 function Controller() {
+	//questions
     this.currentQuestionId;
     this.currentQuestionIndex;
     this.nextQuestionId;
@@ -9,12 +10,18 @@ function Controller() {
     this.questionRepo = [];
     this.questionRepoSize = 10;
     this.currentQuestionBatch = 1;
+    //cookie related
     this.forceFromCurrent = false;
+    this.isAllowCookie = true;
+
+    //preload
     this.minPreloadTime = 2000;
     this.isPreloadFinished = false;
     this.isPreloadTimeUp = false;
     this.preloadTimer;
+    //data url
     this.dataBaseUrl = "data/";
+    
     this.loadCharactors();
     
 }
@@ -35,7 +42,10 @@ Controller.prototype.startGame = function () {
     if ( date != null && date != "" ) {
 	    this.dataBaseUrl = "data/" + date + "/";
 	    this.forceFromCurrent = false;
+	    this.isAllowCookie = false;
 	    this.currentQuestionBatch = 1;
+	    this.currentQuestionId = 1;
+	    this.currentQuestionIndex = 0;
     }
 }
 
@@ -61,7 +71,9 @@ Controller.prototype.loadFromCookie = function () {
 }
 
 Controller.prototype.saveInCookie = function () {
-    createCookie( GameCookieKey, this.currentQuestionId + "," + this.currentQuestionIndex + "," + this.currentQuestionBatch + "," + this.nextQuestionId, 1000);
+	if ( this.isAllowCookie ) {
+		createCookie( GameCookieKey, this.currentQuestionId + "," + this.currentQuestionIndex + "," + this.currentQuestionBatch + "," + this.nextQuestionId, 1000);
+	}
 }
 Controller.prototype.handlePreloadRequest = function() {
 	if ( this.questions.length < 1 ) {

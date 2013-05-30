@@ -475,7 +475,7 @@ body {
 	background: #d9d9d3 url(../img/pannelbg.png);
 	color: #333;
 	left: 100%;
-	overflow: scroll;
+	overflow-y: scroll;
 	box-shadow: 0 -5px 15px #000;
 }
 #pannel-overlay {

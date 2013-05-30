@@ -19,6 +19,7 @@ PtwUI.touchEnd;
 PtwUI.prototype.init = function() {
 	this.stage = $('body');
 	this.menuUI = this.stage.find('#page-start');
+	this.loadingUI = this.stage.find('#page-preload');
 	this.inGameUI = this.stage.find('#page-play');
 	this.questionUIs = this.inGameUI.find('.question');
 	this.successUI = this.inGameUI.find('#play-success');
@@ -80,7 +81,19 @@ PtwUI.prototype.init = function() {
 		
 	});
 }
-
+PtwUI.prototype.switchPageTo = function( $targetPage ) {
+	var $currentPage = $('.current-page');
+	$currentPage.attr('class','page').addClass('animated bounceOutLeft');
+	setTimeout(function(){
+		$currentPage.attr('class','page none');
+	}, 1000);
+	
+	$targetPage.attr('class','page none').addClass('animated bounceInRight').removeClass('none');
+	
+	setTimeout(function(){
+		$targetPage.attr('class','page current-page');
+	}, 1000);	
+}
 PtwUI.prototype.showMenuUI= function(){
    	this.menuUI.find('.loading').removeClass('loading');
    	this.currentLevel = this.controller.currentQuestionId;
@@ -91,14 +104,10 @@ PtwUI.prototype.showMenuUI= function(){
     
 }
 PtwUI.prototype.showInGameUI= function(){
-    $('.current-page').removeClass('current-page').addClass('animated bounceOutLeft');
-    this.inGameUI.attr('class','page none');
-    this.inGameUI.addClass('current-page').addClass('animated bounceInRight').show();
+	this.switchPageTo(this.inGameUI);
 }
 PtwUI.prototype.showFinishUI = function() {
-	 $('.current-page').removeClass('current-page').addClass('animated bounceOutLeft');
-    this.finishUI.attr('class','page none');
-    this.finishUI.addClass('current-page').addClass('animated bounceInRight').show();
+	this.switchPageTo(this.finishUI);
 }
 PtwUI.prototype.onFailed = function () {
     alert("wrong");
@@ -162,8 +171,7 @@ PtwUI.prototype.setAnswerBoxPosition = function(currentQuestion) {
 }
 PtwUI.prototype.showLoadingUI= function(){
 	this.hideSuccessUI();
-    $('.current-page').removeClass('current-page').hide();//addClass('animated bounceOutLeft');
-    $('#page-preload').removeClass("animated bounceInRight bounceOutLeft").addClass('current-page').addClass('animated bounceInRight').show();
+    this.switchPageTo(this.loadingUI);
     $(".ui-progress").css("width", "0%").css("display", "block").find(".ui-label").css("display", "block");
 
 }

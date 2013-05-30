@@ -27,7 +27,7 @@ function OnEnterInGameState() {
             ptwUI.removeCharactor($(this));
         }
     });
-	controller.startGame();
+	//controller.startGame();
 	_hmt.push(['_trackPageview', '/ingame']);
 }
 

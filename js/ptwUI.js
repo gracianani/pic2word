@@ -62,7 +62,7 @@ PtwUI.prototype.init = function() {
 	});
 	this.stage.find('.btnCopyUrl').on(this.touchStart, function(e) {
 		_hmt.push(['_trackEvent', 'CopyUrl', 'click']);
-		copyToClipboard('http://ptw.hortor.net');
+		copyToClipboard('http://pictoword.hortorgame.com');
 	});
 
 	this.successUI.find('#play-success-next').on(this.touchStart, function(){

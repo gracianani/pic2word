@@ -344,7 +344,7 @@ li,ul {
 }
 .answer-key {
 	background: #111;
-	font-size: 1.5em;
+	font-size: 2em;
 	width: 1.5em;
 	height: 1.5em;
 	line-height: 1.5em;
@@ -362,11 +362,6 @@ li,ul {
 .answer-key:hover,.answer-key:active {
 	background: #000;
 	color: #dc8b0c;
-	-webkit-transform: scale(1.2);
-	-moz-transform: scale(1.2);
-	-ms-transform: scale(1.2);
-	-o-transform: scale(1.2);
-	transform: scale(1.2);
 }
 hr {
 	border-top: 1px solid #000;

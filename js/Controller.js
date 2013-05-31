@@ -1,4 +1,5 @@
 var GameCookieKey = "pic2wordkey";
+var LevelsCookieKey = "pic2wordlevels";
 
 
 function Controller() {
@@ -18,6 +19,7 @@ function Controller() {
     //cookie related
     this.forceFromCurrent = false;
     this.isAllowCookie = true;
+    this.readLevelsFromCookie = false;
 
     //preload
     this.minPreloadTime = 2000;
@@ -43,16 +45,10 @@ Controller.prototype.startGame = function () {
     if (readCookie(GameCookieKey) != null) {
         this.loadFromCookie();
     }
-    var date = getURLParameter('date');
-    if ( date != null && date != "" ) {
-	    this.dataBaseUrl = "data/" + date + "/";
-	    this.forceFromCurrent = false;
-	    this.isAllowCookie = false;
-	    this.currentQuestionBatch = 1;
-	    this.currentQuestionId = 1;
-	    this.currentQuestionIndex = 0;
-	    this.currentQuestionLevel = 1;
-    }
+    if (readCookie(LevelsCookieKey) != null) {
+	    this.loadLevelsFromCookie();
+    } 
+    this.initBaseOnUrl();
 }
 
 Controller.prototype.stopGame = function()
@@ -75,10 +71,19 @@ Controller.prototype.loadFromCookie = function () {
     this.nextQuestionLevel =  parseInt(values[3]);
     this.forceFromCurrent = true;
 }
-
 Controller.prototype.saveInCookie = function () {
 	if ( this.isAllowCookie ) {
 		createCookie( GameCookieKey, this.currentQuestionLevel + "," + this.currentQuestionIndex + "," + this.currentQuestionBatch + "," + this.nextQuestionLevel, 1000);
+	}
+}
+Controller.prototype.loadLevelsFromCookie = function() {
+	var controllerData = readCookie(LevelsCookieKey);
+	this.questionLevels = controllerData.split(',');
+	this.readLevelsFromCookie = true;
+}
+Controller.prototype.saveLevelsInCookie = function() {
+	if ( this.isAllowCookie ) {
+		createCookie( LevelsCookieKey, this.questionLevels.join(','));
 	}
 }
 Controller.prototype.handlePreloadRequest = function() {
@@ -88,7 +93,19 @@ Controller.prototype.handlePreloadRequest = function() {
 	    this.loadCurrentQuestions();
     }
 }
-
+Controller.prototype.initBaseOnUrl = function() {
+	var date = getURLParameter('date');
+    if ( date != null && date != "" ) {
+	    this.dataBaseUrl = "data/" + date + "/";
+	    this.forceFromCurrent = false;
+	    this.readLevelsFromCookie = false;
+	    this.isAllowCookie = false;
+	    this.currentQuestionBatch = 1;
+	    this.currentQuestionId = 1;
+	    this.currentQuestionIndex = 0;
+	    this.currentQuestionLevel = 1;
+    }
+}
 Controller.prototype.loadAllQuestions = function () {
     var that = this;
     $.getJSON( this.dataBaseUrl + "questions.json", function(data) {
@@ -101,6 +118,9 @@ Controller.prototype.loadAllQuestions = function () {
     });
 }
 Controller.prototype.generateLevels = function() {
+	if ( this.readLevelsFromCookie && this.questionLevels.length == this.questions.length) {
+		return;
+	}
 	var array = [], length = this.questions.length, difficultyBoundary = this.difficultyBoundary,  i;
 	this.questionLevels = [];
 	for ( i = 0 ; i < Math.min( difficultyBoundary, length ); i ++ ) {
@@ -114,6 +134,7 @@ Controller.prototype.generateLevels = function() {
 		}
 		$.merge(this.questionLevels, shuffleArray(array) );
 	}
+	this.saveLevelsInCookie();
 	
 }
 Controller.prototype.loadCurrentQuestions = function() {

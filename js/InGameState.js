@@ -26,6 +26,9 @@ function OnEnterInGameState() {
         if (data_key != null && data_key != '') {
             ptwUI.removeCharactor($(this));
         }
+        if ( $(this).hasClass('error') ) {
+	        $(this).siblings().attr('class','answer-key');
+        }
     });
 	//controller.startGame();
 	_hmt.push(['_trackPageview', '/ingame']);

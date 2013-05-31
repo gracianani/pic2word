@@ -66,12 +66,12 @@ PtwUI.prototype.init = function() {
 	this.morePannel.find('.pannel').on(this.touchStart, function(e) {
 		stopBubble(e);
 	});
-	this.stage.find('.btnCopyUrl').on(this.touchStart, function(e) {
+	this.stage.find('.btnCopyUrl').on(this.touchEnd, function(e) {
 		_hmt.push(['_trackEvent', 'CopyUrl', 'click']);
 		copyToClipboard('http://pictoword.hortorgame.com');
 	});
 
-	this.successUI.find('#play-success-next').on(this.touchStart, function(){
+	this.successUI.find('#play-success-next').on(this.touchEnd, function(){
         if ( that.controller.needPreload == true ) {
 			SM.SetStateByName("preload");
 		} else {
@@ -110,7 +110,8 @@ PtwUI.prototype.showFinishUI = function() {
 	this.switchPageTo(this.finishUI);
 }
 PtwUI.prototype.onFailed = function () {
-    alert("wrong");
+
+    this.currentQuestionUI.find('.answer-key').addClass('error animated shake');
 }
 
 PtwUI.prototype.setQuestionLevelText = function() {

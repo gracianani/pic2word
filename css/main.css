@@ -355,11 +355,19 @@ li,ul {
 	cursor: pointer;
 	border-left: 1px solid #333;
 	border-bottom: 1px solid #333;
+	color: #FFF;
+}
+.answer-key.error {
+	color: #F00!important;
 }
 .answer-key:last {
 	margin-right: 0;
 }
-.answer-key:hover,.answer-key:active {
+
+.answer-key:hover{
+	color: #FFF;
+}
+.answer-key:active, {
 	background: #000;
 	color: #dc8b0c;
 }
@@ -916,6 +924,10 @@ and (orientation : landscape) {
         width: 1026px; /* 1140px - 10% for margins */
         margin: 0 auto;
     }
+    .answer-key:hover, {
+	background: #000;
+	color: #dc8b0c;
+	}
 }
 
 /* ==========================================================================

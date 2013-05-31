@@ -4,12 +4,17 @@ var GameCookieKey = "pic2wordkey";
 function Controller() {
 	//questions
     this.currentQuestionId;
+    this.currentQuestionLevel;
     this.currentQuestionIndex;
-    this.nextQuestionId;
+    this.nextQuestionLevel;
     this.questions = [];
+    this.questionLevels = [];
     this.questionRepo = [];
     this.questionRepoSize = 10;
     this.currentQuestionBatch = 1;
+    this.isFinish = false;
+    this.difficultyBoundary = 30;
+    
     //cookie related
     this.forceFromCurrent = false;
     this.isAllowCookie = true;
@@ -46,6 +51,7 @@ Controller.prototype.startGame = function () {
 	    this.currentQuestionBatch = 1;
 	    this.currentQuestionId = 1;
 	    this.currentQuestionIndex = 0;
+	    this.currentQuestionLevel = 1;
     }
 }
 
@@ -63,16 +69,16 @@ Controller.prototype.loadCharactors = function () {
 Controller.prototype.loadFromCookie = function () {
     var controllerData = readCookie(GameCookieKey);
     var values = controllerData.split(',');
-    this.currentQuestionId = parseInt(values[0]);
+    this.currentQuestionLevel = parseInt(values[0]);
     this.currentQuestionIndex = parseInt(values[1]);
     this.currentQuestionBatch = parseInt(values[2]);
-    this.nextQuestionId =  parseInt(values[3]);
+    this.nextQuestionLevel =  parseInt(values[3]);
     this.forceFromCurrent = true;
 }
 
 Controller.prototype.saveInCookie = function () {
 	if ( this.isAllowCookie ) {
-		createCookie( GameCookieKey, this.currentQuestionId + "," + this.currentQuestionIndex + "," + this.currentQuestionBatch + "," + this.nextQuestionId, 1000);
+		createCookie( GameCookieKey, this.currentQuestionLevel + "," + this.currentQuestionIndex + "," + this.currentQuestionBatch + "," + this.nextQuestionLevel, 1000);
 	}
 }
 Controller.prototype.handlePreloadRequest = function() {
@@ -90,30 +96,54 @@ Controller.prototype.loadAllQuestions = function () {
     	if ( data["questionRepoSize"] ) {
 	    	that.questionRepoSize = data["questionRepoSize"];
     	}
+    	that.generateLevels();
     	that.loadCurrentQuestions();
     });
 }
+Controller.prototype.generateLevels = function() {
+	var array = [], length = this.questions.length, difficultyBoundary = this.difficultyBoundary,  i;
+	this.questionLevels = [];
+	for ( i = 0 ; i < Math.min( difficultyBoundary, length ); i ++ ) {
+		array.push(i);
+	}
+	$.merge(this.questionLevels, shuffleArray(array) );	
+
+	if ( length > difficultyBoundary ) {
+		for ( i = difficultyBoundary, array = []; i < length; i ++ ) {
+			array.push(i);
+		}
+		$.merge(this.questionLevels, shuffleArray(array) );
+	}
+	
+}
 Controller.prototype.loadCurrentQuestions = function() {
-	var start,end;
+	var start, end, repoLevels=[], that = this;
 	start = (this.currentQuestionBatch - 1) * this.questionRepoSize;
 	end = Math.min( this.questions.length, start + this.questionRepoSize);
 	if ( start > end ) {
 		//no more questions
 		this.saveInCookie();
+		controller.isFinish = true;
 		SM.SetStateByName('finish');
 		return;
 	}
-	this.questionRepo = this.questions.slice(start, end);
+	this.questionRepo = [];
+	repoLevels = this.questionLevels.slice(start, end);
+	repoLevels.forEach( function(value, index ) {
+		that.questionRepo.push(that.questions[value]);
+	});
 	if (this.forceFromCurrent == false) {
             this.currentQuestionIndex = 0;
-            this.currentQuestionId = this.questionRepo[this.currentQuestionIndex]["ID"];
-            this.nextQuestionId = this.currentQuestionId + 1;
+            this.currentQuestionLevel = 1;
+            this.nextQuestionLevel = this.currentQuestionLevel + 1;
     }
+    this.currentQuestionId = this.questionRepo[this.currentQuestionIndex]["ID"];
     this.saveInCookie();
     
     
     preloadImages(this.questionRepo);
 }
+
 
 Controller.prototype.isAnswerCorrect = function () {
     var answerText = '';
@@ -136,15 +166,18 @@ Controller.prototype.processToNextQuestion = function () {
 
     if (this.questionRepo.length > this.currentQuestionIndex + 1) {
         this.currentQuestionIndex++;
-        this.currentQuestionId++;
-        this.nextQuestionId++;
+        this.currentQuestionLevel++;
+        this.nextQuestionLevel++;
+        this.currentQuestionId = this.questionRepo[this.currentQuestionIndex]["ID"];
         this.saveInCookie();
         controller.needPreload = false;
     }
     else {
-        this.forceFromCurrent = false;
+        this.forceFromCurrent = true;
         this.currentQuestionBatch++;
-        //SM.SetStateByName("preload");
+        this.currentQuestionLevel++;
+        this.nextQuestionLevel++;
+        this.currentQuestionIndex = 0;
         controller.needPreload = true;
     }
 

@@ -1,12 +1,13 @@
 var preload;
 function OnEnterPreloadState() {
-    ptwUI.showLoadingUI();
-    controller.handlePreloadRequest();
-	_hmt.push(['_trackPageview', '/preload']);
-	
-	controller.isPreloadFinished = false;
-	controller.isPreloadTimeUp = false;
-	controller.preloadTimer = setTimeout("preloadTimeUp()", controller.minPreloadTime);
+	controller.handlePreloadRequest();
+	if ( !controller.isFinish )	{
+		ptwUI.showLoadingUI();
+		_hmt.push(['_trackPageview', '/preload']);
+		controller.isPreloadFinished = false;
+		controller.isPreloadTimeUp = false;
+		controller.preloadTimer = setTimeout("preloadTimeUp()", controller.minPreloadTime);
+	}
 }
 
 function OnExitPreloadState()

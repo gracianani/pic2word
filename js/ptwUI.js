@@ -25,7 +25,6 @@ PtwUI.prototype.init = function() {
 	this.successUI = this.inGameUI.find('#play-success');
 	this.morePannel = this.stage.find('#pannel-overlay');
 	this.finishUI = this.stage.find("#page-finish");
-	this.currentLevel = 0;
 	this.answer = '';
 	this.animationList = [];
 	
@@ -83,12 +82,14 @@ PtwUI.prototype.init = function() {
 }
 PtwUI.prototype.switchPageTo = function( $targetPage ) {
 	var $currentPage = $('.current-page');
+	//hide all other pages and clear class
+	$('.page').not('current-page').attr('class','page none');
 	$currentPage.attr('class','page').addClass('animated bounceOutLeft');
 	setTimeout(function(){
 		$currentPage.attr('class','page none');
 	}, 1000);
 	
-	$targetPage.attr('class','page none').addClass('animated bounceInRight').removeClass('none');
+	$targetPage.attr('class','page none current-page').addClass('animated bounceInRight').removeClass('none');
 	
 	setTimeout(function(){
 		$targetPage.attr('class','page current-page');
@@ -96,8 +97,7 @@ PtwUI.prototype.switchPageTo = function( $targetPage ) {
 }
 PtwUI.prototype.showMenuUI= function(){
    	this.menuUI.find('.loading').removeClass('loading');
-   	this.currentLevel = this.controller.currentQuestionId;
-   	$('#start-level').html(this.currentLevel);
+   	$('#start-level').html(this.controller.currentQuestionLevel);
     this.addAnimation('#start-btnPlay', 'bounceInUp', 500, null);
     this.addAnimation('#start-level', 'bounceIn', 500, null);
     this.playAnimationsFrom(0);
@@ -114,7 +114,7 @@ PtwUI.prototype.onFailed = function () {
 }
 
 PtwUI.prototype.setQuestionLevelText = function() {
-	this.inGameUI.find('#play-level').html(this.controller.currentQuestionId);
+	this.inGameUI.find('#play-level').html(this.controller.currentQuestionLevel);
 }
 PtwUI.prototype.updateAnswerText = function() {
 	var answerText = '';
@@ -127,7 +127,7 @@ PtwUI.prototype.updateAnswerText = function() {
 }
 PtwUI.prototype.showSuccessUI= function(){
 	
-	this.successUI.find('#play-success-level').html(this.currentLevel);
+	this.successUI.find('#play-success-level').html(this.controller.currentQuestionLevel - 1);
 	this.successUI.find('#play-success-answer').html(this.answer);
 	
 	this.successUI.show();
@@ -144,18 +144,17 @@ PtwUI.prototype.hideSuccessUI = function() {
 	this.successUI.find('#play-success-title,#play-success-level,#play-success-answer,#play-success-action').css('visibility','hidden').attr('class','');
 }
 PtwUI.prototype.showCurrentQuestion = function () {
-	var currentQuestion;
 	this.answer = '';
-	this.currentLevel = this.controller.currentQuestionId;
+	var currentId = this.controller.currentQuestionId;
 	
 	this.hideSuccessUI();
-    $('.question').hide();
+    $('.question').attr('class','question').hide();
     this.setQuestionLevelText();
     
-    if (this.currentQuestionUI) {
-	    this.currentQuestionUI = $('#question-' + this.currentLevel).addClass('animated bounceInRight').show();
+    if ( this.currentQuestionUI ) {
+	    this.currentQuestionUI = $('#question-' + currentId).addClass('animated bounceInRight').show();
     } else {
-	    this.currentQuestionUI = $('#question-' + this.currentLevel).show();
+	    this.currentQuestionUI = $('#question-' + currentId).show();
     }
     this.setAnswerBoxPosition(this.currentQuestionUI);   
 }

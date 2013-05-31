@@ -578,6 +578,9 @@ h4 {
 	margin-bottom: 10px;
 	width: 80%;
 }
+.ui-progress-bar {
+	margin: 0 0 2em 0;
+}
 /* ==========================================================================
    Media Queries
    ========================================================================== */
@@ -761,8 +764,8 @@ and (orientation : landscape) {
 		border-bottom-width: 10px;
 	}
 	.question-pic {
-	   width: 256px;
-	   height: 256px;
+	   width: 350px;
+	   height: 350px;
    }
    .header-container {
 	   height: 64px;
@@ -814,6 +817,29 @@ and (orientation : landscape) {
 		display: block;
 		vertical-align: top;
 	}
+	.question-key {
+		font-size: 2em;
+		width: 2em;
+		height: 2em;
+		line-height: 2em;
+		border-radius: 10px;
+		border-bottom: 3px solid #aaa;
+		margin-right: 5px;
+		margin-left: 0;
+		margin-bottom: 5px;
+	}
+	.question-key:active {
+		border-top-width: 3px;
+	}
+	.answer-key {
+	    font-size: 2em;
+		width: 2em;
+		height: 2em;
+		line-height: 2em;
+    }
+    .header-container .btn-openHelpPannel {
+	    padding: 15px;
+    }
 
 }
 

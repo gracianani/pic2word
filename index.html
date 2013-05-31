@@ -14,8 +14,9 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link rel="stylesheet" href="css/animate.min.css">
         <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
         <link href="css/ui.progress-bar.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="css/main.css">
+        
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
         <script>
 		var _hmt = _hmt || [];
@@ -96,6 +97,13 @@
 	        </div>
 	         <div class="main-container">
 	            <div class="main wrapper clearfix">
+	            	<div id="progress_bar_container">
+		            <div id="progress_bar" class="ui-progress-bar ui-container">
+		                <div class="ui-progress" style="display:none;">
+		                <span class="ui-label" style="display:none;">Processing <b class="value"></b></span>
+		                </div><!-- .ui-progress -->
+		            </div><!-- #progress_bar -->
+		        	</div>
 		        	<div id="preload-ad">
 		            	<script type="text/javascript">
 						     document.write('<a style="display:none!important" id="tanx-a-mm_43488035_4048900_13174466"></a>');
@@ -109,13 +117,7 @@
 						     if(tanx_h)tanx_h.insertBefore(tanx_s,tanx_h.firstChild);
 						</script>
 		        	</div>
-		        	<div id="progress_bar_container">
-		            <div id="progress_bar" class="ui-progress-bar ui-container">
-		                <div class="ui-progress" style="display:none;">
-		                <span class="ui-label" style="display:none;">Processing <b class="value"></b></span>
-		                </div><!-- .ui-progress -->
-		            </div><!-- #progress_bar -->
-		        	</div>
+		        	
 	            </div>
 	         </div>
         </div>

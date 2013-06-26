@@ -31,7 +31,12 @@ PtwUI.prototype.init = function() {
 	var that = this;
 	
 	$('body').on('selectstart,drag',function(e){
+		e.preventDefault();
 	});
+	$('body').on('touchmove', function(e) {
+		//e.preventDefault();
+	});
+	
 	if ( is_touch_device() ) {
 		if ( is_ie_mobile() ) {
 			this.touchStart = 'MSPointerDown';

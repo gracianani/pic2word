@@ -1,0 +1,23 @@
+{
+    "questionRepoSize": 10,
+    "questions": [
+        {
+            "answer": "赛百味",
+            "ID": 1,
+            "category": "公司&品牌",
+            "keyboard": "巴蜀香料酒肯德基麦当劳必胜客蒸真功夫和合谷全聚德"
+        },
+        {
+            "answer": "机器人总动员",
+            "ID": 2,
+            "category": "电影&电视",
+            "keyboard": "星球大战崛起猿猩际迷航争霸冒险物语故事"
+        },
+        {
+            "answer": "金州勇士",
+            "ID": 3,
+            "category": "球队",
+            "keyboard": "旧金山红袜子蓝丹佛掘爵犹他巴塞罗那佛罗伦萨骑"
+        }
+    ]
+}

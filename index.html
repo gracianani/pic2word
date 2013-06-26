@@ -105,17 +105,17 @@
 		            </div><!-- #progress_bar -->
 		        	</div>
 		        	<div id="preload-ad">
-		            	<script type="text/javascript">
-						     document.write('<a style="display:none!important" id="tanx-a-mm_43488035_4048900_13174466"></a>');
-						     tanx_s = document.createElement("script");
-						     tanx_s.type = "text/javascript";
-						     tanx_s.charset = "gbk";
-						     tanx_s.id = "tanx-s-mm_43488035_4048900_13174466";
-						     tanx_s.async = true;
-						     tanx_s.src = "http://p.tanx.com/ex?i=mm_43488035_4048900_13174466";
-						     tanx_h = document.getElementsByTagName("head")[0];
-						     if(tanx_h)tanx_h.insertBefore(tanx_s,tanx_h.firstChild);
-						</script>
+					<script type="text/javascript">
+						function clickAds() {
+							if (/android/i.test(navigator.userAgent)){
+								// alert(navigator.userAgent);
+								window.location = 'http://k.8864.com/adCount.php?mid=1007940003';
+							} else {
+								window.location = 'http://k.8864.com/adCount.php?mid=1007940002';
+							}
+						}
+					</script>
+					<div onclick="clickAds();"><img src="img/ads.jpg" width="240px" /></div>
 		        	</div>
 		        	
 	            </div>
@@ -139,7 +139,7 @@
 	            <p>但是....下面有更多题目等着你！</p>
 	        	<a href="https://itunes.apple.com/cn/app/feng-kuang-cai-tu/id634331773?mt=8" class="btn btn-success" target="_blank" onclick="_hmt.push(['_trackEvent', 'AppDownload', 'click']);"><big>在AppStore下载完整版</big><br/><small>支持iPad iPhone</small></a>
 	        	
-	        	<a href="http://www.appchina.com/app/com.hortor.pictoword/" class="btn btn-success" target="_blank" onclick="_hmt.push(['_trackEvent', 'AppDownload', 'click']);"><big>下载Android完整版</big><br/><small>来自应用汇</small></a>
+	        	<a href="http://g.duoku.com/agame/?action=detail_51643" class="btn btn-success" target="_blank" onclick="_hmt.push(['_trackEvent', 'AppDownload', 'click']);"><big>下载Android完整版</big></a>
 	        	
 		        <a class="btn btn-info" href="http://weixin.qq.com/r/3HVJRlrETmQxh0slnyD4" target="_blank" onclick="_hmt.push(['_trackEvent', 'FollowWechat', 'click']);"><big>关注微信: fengkuangcaitu</big><br /><small>每天都有新题目</small></a>
 		        
@@ -158,7 +158,7 @@
 	        	<h4>想要更多题目？</h4>
 	        	<a href="https://itunes.apple.com/cn/app/feng-kuang-cai-tu/id634331773?mt=8" class="btn btn-success" target="_blank" onclick="_hmt.push(['_trackEvent', 'AppDownload', 'click']);"><i class="icon-ipad icon"></i><big>AppStore下载完整版</big><br/><small>支持iPad iPhone</small></a>
 	        	
-	        	<a href="http://www.appchina.com/app/com.hortor.pictoword/" class="btn btn-success" target="_blank" onclick="_hmt.push(['_trackEvent', 'AppDownload', 'click']);"><i class="icon-ipad icon"></i><big>下载Android完整版</big><br/><small>来自应用汇</small></a>
+	        	<a href="http://g.duoku.com/agame/?action=detail_51643" class="btn btn-success" target="_blank" onclick="_hmt.push(['_trackEvent', 'AppDownload', 'click']);"><i class="icon-ipad icon"></i><big>下载Android完整版</big></a>
 	        	
 		        <a class="btn btn-info" href="http://weixin.qq.com/r/3HVJRlrETmQxh0slnyD4" target="_blank" onclick="_hmt.push(['_trackEvent', 'FollowWechat', 'click']);"><i class="icon-wechat icon"></i><big>关注微信: <br/>fengkuangcaitu</big><br /><small>每天都有新题目</small></a>
 		        

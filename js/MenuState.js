@@ -1,6 +1,7 @@
 function OnEnterMenuState() {
     ptwUI.showMenuUI();
 	initMenu();
+	_hmt.push(['_trackPageview', '/start']);
 }
 
 function OnExitMenuState()

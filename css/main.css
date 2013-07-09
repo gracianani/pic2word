@@ -532,7 +532,7 @@ h4 {
 	padding-left: 10px;
 	display: inline-block;
 }
-.header-container .btn-openHelpPannel {
+.header-container .btn-openHelpPannel , .header-container .btn-left{
 	position: absolute;
 	right: 10px;
 	top: 5px;
@@ -541,7 +541,24 @@ h4 {
 	height: 20px;
 	border-bottom-width: 2px;
 	border-radius: 5px;
+	
 }
+.header-container .btn-hide
+{
+    display:none;
+}
+
+.header-container .btn-left
+{
+    
+    left:10px;
+    right:auto;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+}
+ 
+
 .icon {
 	width: 24px;
 	height: 24px;
@@ -636,6 +653,12 @@ and (orientation : landscape) {
 		background-size: 32px auto;
 		background-position: 0 -32px;
 	}
+ .header-container .btn-left
+    {
+        height: 20px;
+        line-height: 20px;
+        font-size: 12px;
+    }
 	#start-icon {
 		margin-top: 10px;
 		float: right;
@@ -840,7 +863,15 @@ and (orientation : landscape) {
     .header-container .btn-openHelpPannel {
 	    padding: 15px;
     }
-
+       
+    .header-container .btn-left
+    {
+        left:10px;
+        right:auto;
+        line-height: 30px;
+        height: 30px;
+        padding: 10px;
+    }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -938,6 +969,13 @@ and (orientation : landscape) {
 	.header-container .btn-openHelpPannel {
 		padding: 10px;
 	}
+	   
+.header-container .btn-left
+{
+    line-height: 30px;
+    height: 30px;
+    padding:5px;
+}
 }
 
 @media only screen and (min-width: 1140px) {

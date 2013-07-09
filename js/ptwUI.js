@@ -31,7 +31,12 @@ PtwUI.prototype.init = function() {
 	var that = this;
 	
 	$('body').on('selectstart,drag',function(e){
+		e.preventDefault();
 	});
+	$('body').on('touchmove', function(e) {
+		//e.preventDefault();
+	});
+	
 	if ( is_touch_device() ) {
 		if ( is_ie_mobile() ) {
 			this.touchStart = 'MSPointerDown';
@@ -95,13 +100,19 @@ PtwUI.prototype.switchPageTo = function( $targetPage ) {
 		$targetPage.attr('class','page current-page');
 	}, 1000);	
 }
-PtwUI.prototype.showMenuUI= function(){
-   	this.menuUI.find('.loading').removeClass('loading');
-   	$('#start-level').html(this.controller.currentQuestionLevel);
+PtwUI.prototype.showMenuUI = function () {
+    if (window.location.href.indexOf("openid") > -1 && window.location.href.indexOf("openkey") > -1) {
+        this.menuUI.find(".btn-hide").removeClass("btn-hide");
+        this.inGameUI.find(".btn-hide").removeClass("btn-hide");
+        this.finishUI.find(".btn-hide").removeClass("btn-hide");
+        this.inGameUI.find("#play-success-share").css("display","none");
+    }
+    this.menuUI.find('.loading').removeClass('loading');
+    $('#start-level').html(this.controller.currentQuestionLevel);
     this.addAnimation('#start-btnPlay', 'bounceInUp', 500, null);
     this.addAnimation('#start-level', 'bounceIn', 500, null);
     this.playAnimationsFrom(0);
-    
+
 }
 PtwUI.prototype.showInGameUI= function(){
 	this.switchPageTo(this.inGameUI);

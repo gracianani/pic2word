@@ -1,0 +1,23 @@
+{
+    "questionRepoSize": 10,
+    "questions": [
+        {
+            "answer": "少年派的奇幻漂流",
+            "ID": 1,
+            "category": "电影&电视",
+            "keyboard": "老青中小神泊故事人与自然动物世界"
+        },
+        {
+            "answer": "京东商城",
+            "ID": 2,
+            "category": "公司&品牌",
+            "keyboard": "书店新华淘宝当当亚马逊斯密"
+        },
+        {
+            "answer": "料理鼠王",
+            "ID": 3,
+            "category": "电影&电视",
+            "keyboard": "宇宙超级霹雳国物猫狮子"
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "questionRepoSize": 10,
+    "questions": [
+        {
+            "answer": "EMS",
+            "ID": 1,
+            "category": "公司&品牌",
+            "keyboard": "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        },
+        {
+            "answer": "辛德勒的名单",
+            "ID": 2,
+            "category": "电影&电视",
+            "keyboard": "钢琴师海上普森魂断蓝桥"
+        },
+        {
+            "answer": "飞屋环游记",
+            "ID": 3,
+            "category": "电影&电视",
+            "keyboard": "行宇宙太空艇航故事集小狗大"
+        }
+    ]
+}
